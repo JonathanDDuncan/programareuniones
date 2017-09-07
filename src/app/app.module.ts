@@ -8,6 +8,7 @@ import { MyApp } from './app.component';
 
 import { CardsPage } from '../pages/cards/cards';
 import { ContentPage } from '../pages/content/content';
+import { PublicadoresPage } from '../pages/publicadores/publicadores';
 import { ItemCreatePage } from '../pages/item-create/item-create';
 import { ItemDetailPage } from '../pages/item-detail/item-detail';
 import { ListMasterPage } from '../pages/list-master/list-master';
@@ -33,7 +34,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-
+import { Ng2SmartTableModule } from 'ng2-smart-table';
 // The translate loader needs to know where to load i18n files
 // in Ionic's static asset pipeline.
 export function HttpLoaderFactory(http: Http) {
@@ -60,6 +61,7 @@ export function provideSettings(storage: Storage) {
     MyApp,
     CardsPage,
     ContentPage,
+    PublicadoresPage,
     ItemCreatePage,
     ItemDetailPage,
     ListMasterPage,
@@ -84,13 +86,15 @@ export function provideSettings(storage: Storage) {
       }
     }),
     IonicModule.forRoot(MyApp),
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot(),
+    Ng2SmartTableModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     CardsPage,
     ContentPage,
+    PublicadoresPage,
     ItemCreatePage,
     ItemDetailPage,
     ListMasterPage,

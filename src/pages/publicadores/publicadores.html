@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Publicadores
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <p>
+    publicadores
+  </p>
+  
+  <ng2-smart-table [settings]="settings" [source]="data"></ng2-smart-table>
+
+  <button (click)="SaveData()">Save</button>
+</ion-content>
