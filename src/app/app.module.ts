@@ -1,8 +1,11 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpModule, Http } from '@angular/http';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { Storage, IonicStorageModule } from '@ionic/storage';
+import { FormsModule }   from '@angular/forms';
+import { MaterialModule } from '@angular/material';
 
 import { MyApp } from './app.component';
 
@@ -21,11 +24,15 @@ import { SignupPage } from '../pages/signup/signup';
 import { TabsPage } from '../pages/tabs/tabs';
 import { TutorialPage } from '../pages/tutorial/tutorial';
 import { WelcomePage } from '../pages/welcome/welcome';
+import { RXDBSampleComponent } from '../pages/rxdbsample/rxdbsample.component';
 
 import { Api } from '../providers/api';
 import { Items } from '../mocks/providers/items';
 import { Settings } from '../providers/settings';
 import { User } from '../providers/user';
+import { HeroInsertComponent } from '../components/hero-insert/hero-insert.component';
+import { HeroEditComponent } from '../components/hero-edit/hero-edit.component';
+import { HeroesListComponent } from '../components/heroes-list/heroes-list.component';
 
 import { Camera } from '@ionic-native/camera';
 import { GoogleMaps } from '@ionic-native/google-maps';
@@ -73,10 +80,15 @@ export function provideSettings(storage: Storage) {
     SignupPage,
     TabsPage,
     TutorialPage,
-    WelcomePage
+    WelcomePage,
+    RXDBSampleComponent,
+    HeroInsertComponent,
+    HeroEditComponent,
+    HeroesListComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpModule,
     TranslateModule.forRoot({
       loader: {
@@ -87,7 +99,9 @@ export function provideSettings(storage: Storage) {
     }),
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
-    Ng2SmartTableModule
+    Ng2SmartTableModule,
+    FormsModule,
+    MaterialModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -106,7 +120,8 @@ export function provideSettings(storage: Storage) {
     SignupPage,
     TabsPage,
     TutorialPage,
-    WelcomePage
+    WelcomePage,
+    RXDBSampleComponent
   ],
   providers: [
     Api,

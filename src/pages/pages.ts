@@ -5,6 +5,7 @@ import { SearchPage } from './search/search';
 import { SettingsPage } from './settings/settings';
 import { TabsPage } from './tabs/tabs';
 import { TutorialPage } from './tutorial/tutorial';
+import { RXDBSampleComponent } from './rxdbsample/rxdbsample.component';
 
 // The page the user lands on after opening the app and without a session
 // export const FirstRunPage = TutorialPage;
@@ -16,5 +17,5 @@ export const MainPage = TabsPage;
 
 // The initial root pages for our tabs (remove if not using tabs)
 export const Tab1Root = ContentPage;
-export const Tab2Root = PublicadoresPage;
-export const Tab3Root = SettingsPage;
+export const Tab2Root = RXDBSampleComponent;
+export const Tab3Root = PublicadoresPage;
