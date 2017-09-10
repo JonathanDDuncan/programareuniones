@@ -8,29 +8,12 @@ import { Observable } from 'rxjs';
 
 declare interface RxPublicadorDocumentData {
     name?: string;
-    color?: string;
-    maxHP?: number;
-    hp?: number;
-    team?: string;
-    skills?: Array<{
-        name?: string,
-        damage?: string
-    }>;
+   
 }
 
 export class RxPublicadorDocument extends RxDB.RxDocument {
     name: string;
-    color: string;
-    maxHP: number;
-    hp?: number;
-    team?: string;
-    skills?: Array<{
-        name?: string,
-        damage?: string
-    }>;
-
-    // ORM methods
-    hpPercent(): number;
+    
 }
 
 declare class RxPublicadorCollection extends RxDB.RxCollection<RxPublicadorDocument> {

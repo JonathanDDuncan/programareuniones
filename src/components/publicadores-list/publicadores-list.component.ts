@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy, NgZone, Output, EventEmitter } from '@angular/core';
 import { ProgramaDatabaseService } from '../../services/programadatabase.service';
 
-import * as RxDBTypes from '../../RxDB.d';
+import * as RxDBTypes from '../../schemas/RxProgramaDB.d';
 declare var require: any;
 @Component({
     selector: 'publicadores-list',
@@ -12,10 +12,10 @@ declare var require: any;
 export class PublicadoresListComponent implements OnInit, OnDestroy {
 
 
-    heroes: RxDBTypes.RxHeroDocument[] | RxDBTypes.RxHeroDocument;
+    heroes: RxDBTypes.RxPublicadorDocument[] | RxDBTypes.RxPublicadorDocument;
     sub;
 
-    @Output('edit') editChange: EventEmitter<RxDBTypes.RxHeroDocument> = new EventEmitter();
+    @Output('edit') editChange: EventEmitter<RxDBTypes.RxPublicadorDocument> = new EventEmitter();
     set edit(hero) {
         console.log('editHero: ' + hero.name);
         this.editChange.emit(hero);

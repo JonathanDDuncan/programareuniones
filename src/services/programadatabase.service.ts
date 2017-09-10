@@ -43,8 +43,6 @@ const adapters = {
 const useAdapter = 'idb';
 RxDB.plugin(adapters[useAdapter]);
 
-
-
 let collections = [
     {
         name: 'publicadores',
