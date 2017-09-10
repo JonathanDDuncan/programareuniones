@@ -25,6 +25,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { TutorialPage } from '../pages/tutorial/tutorial';
 import { WelcomePage } from '../pages/welcome/welcome';
 import { RXDBSampleComponent } from '../pages/rxdbsample/rxdbsample.component';
+import { RXDBPublicadorSampleComponent } from '../pages/rxdbpublicadorsample/rxdbpublicadorsample.component';
 
 import { Api } from '../providers/api';
 import { Items } from '../mocks/providers/items';
@@ -33,6 +34,9 @@ import { User } from '../providers/user';
 import { HeroInsertComponent } from '../components/hero-insert/hero-insert.component';
 import { HeroEditComponent } from '../components/hero-edit/hero-edit.component';
 import { HeroesListComponent } from '../components/heroes-list/heroes-list.component';
+import { PublicadorInsertComponent } from '../components/publicador-insert/publicador-insert.component';
+import { PublicadorEditComponent } from '../components/publicador-edit/publicador-edit.component';
+import { PublicadoresListComponent } from '../components/publicadores-list/publicadores-list.component';
 
 import { Camera } from '@ionic-native/camera';
 import { GoogleMaps } from '@ionic-native/google-maps';
@@ -84,7 +88,11 @@ export function provideSettings(storage: Storage) {
     RXDBSampleComponent,
     HeroInsertComponent,
     HeroEditComponent,
-    HeroesListComponent
+    HeroesListComponent,
+    RXDBPublicadorSampleComponent,
+    PublicadorInsertComponent,
+    PublicadorEditComponent,
+    PublicadoresListComponent
   ],
   imports: [
     BrowserModule,
@@ -121,7 +129,8 @@ export function provideSettings(storage: Storage) {
     TabsPage,
     TutorialPage,
     WelcomePage,
-    RXDBSampleComponent
+    RXDBSampleComponent,
+    RXDBPublicadorSampleComponent
   ],
   providers: [
     Api,
