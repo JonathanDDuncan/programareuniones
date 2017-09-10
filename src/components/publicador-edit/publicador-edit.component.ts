@@ -1,5 +1,5 @@
 import { Component, ViewChildren, Input, OnChanges, Output, EventEmitter, OnInit } from '@angular/core';
-import { DatabaseService } from '../../services/database.service';
+import { ProgramaDatabaseService } from '../../services/programadatabase.service';
 declare var require: any;
 
 
@@ -7,7 +7,7 @@ declare var require: any;
     selector: 'publicador-edit',
     templateUrl: './publicador-edit.component.html',
     styles: ['./publicador-edit.component.less'],
-    providers: [DatabaseService],
+    providers: [ProgramaDatabaseService],
 })
 export class PublicadorEditComponent {
 
@@ -15,7 +15,7 @@ export class PublicadorEditComponent {
     @Output('done') done = new EventEmitter();
 
     constructor(
-        private databaseService: DatabaseService
+        private databaseService: ProgramaDatabaseService
     ) { }
 
     async submit() {

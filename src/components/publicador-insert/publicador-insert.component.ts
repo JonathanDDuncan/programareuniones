@@ -1,12 +1,13 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
-import { DatabaseService } from '../../services/database.service';
+import { ProgramaDatabaseService } from '../../services/programadatabase.service';
+
 import * as randomInt from 'random-int';
 declare var require: any;
 @Component({
     selector: 'publicador-insert',
     templateUrl: './publicador-insert.component.html',
     styles: ['./publicador-insert.component.less'],
-    providers: [DatabaseService]
+    providers: [ProgramaDatabaseService]
 })
 export class PublicadorInsertComponent implements OnInit {
 
@@ -15,7 +16,7 @@ export class PublicadorInsertComponent implements OnInit {
     tempDoc: any;
 
     constructor(
-        private databaseService: DatabaseService
+        private databaseService: ProgramaDatabaseService
     ) { }
 
     async ngOnInit() {
@@ -24,7 +25,7 @@ export class PublicadorInsertComponent implements OnInit {
 
     async reset() {
         const db = await this.databaseService.get();
-        this.tempDoc = db.hero.newDocument({
+        this.tempDoc = db.publicadores.newDocument({
             maxHP: randomInt(100, 1000)
         });
     }

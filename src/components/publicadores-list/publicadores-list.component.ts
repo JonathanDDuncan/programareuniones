@@ -1,12 +1,13 @@
 import { Component, OnInit, OnDestroy, NgZone, Output, EventEmitter } from '@angular/core';
-import { DatabaseService } from '../../services/database.service';
+import { ProgramaDatabaseService } from '../../services/programadatabase.service';
+
 import * as RxDBTypes from '../../RxDB.d';
 declare var require: any;
 @Component({
     selector: 'publicadores-list',
     templateUrl: './publicadores-list.component.html',
     styles: ['./publicadores-list.component.less'],
-    providers: [DatabaseService]
+    providers: [ProgramaDatabaseService]
 })
 export class PublicadoresListComponent implements OnInit, OnDestroy {
 
@@ -27,7 +28,7 @@ export class PublicadoresListComponent implements OnInit, OnDestroy {
     }
 
     constructor(
-        private databaseService: DatabaseService,
+        private databaseService: ProgramaDatabaseService,
         private zone: NgZone
     ) {
     }
@@ -36,7 +37,7 @@ export class PublicadoresListComponent implements OnInit, OnDestroy {
 
     private async _show() {
         const db = await this.databaseService.get();
-        const heroes$ = db.hero
+        const heroes$ = db.publicadores
             .find()
             .sort({ name: 1 })
             .$;
