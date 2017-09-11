@@ -26,14 +26,14 @@ export class PublicadorInsertComponent implements OnInit {
     async reset() {
         const db = await this.databaseService.get();
         this.tempDoc = db.publicadores.newDocument({
-           
+           age: 0 
         });
     }
 
     async submit() {
         console.log('PublicadorInsertComponent.submit():');
         console.log('name: ' + this.tempDoc.name);
-        console.log('color: ' + this.tempDoc.color);
+        console.log('age: ' + this.tempDoc.age);
 
         try {
             debugger;

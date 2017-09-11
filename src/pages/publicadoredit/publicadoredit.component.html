@@ -1,0 +1,48 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            Description
+        </ion-title>
+        <ion-buttons start>
+            <button ion-button (click)="dismiss()">
+                  <span ion-text color="primary" showWhen="ios">Cancel</span>
+                  <ion-icon name="md-close" showWhen="android, windows"></ion-icon>
+                </button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+<ion-content>
+    <h3>Edit Publicador</h3>
+    Ion Content
+    <ion-list>
+
+
+        <ion-item class="publicador-edit-component">
+            <md-card-subtitle>Edit</md-card-subtitle>
+
+            <div class="alert" *ngIf="!(publicador.synced$ | async)">
+                <h4>Warning:</h4>
+                <p>Someone else has <b>changed</b> this document. If you click save, you will overwrite the changes.</p>
+                <button md-raised-button color="primary" (click)=publicador.resync()>resync</button>
+            </div>
+
+            <div class="alert deleted" *ngIf="(publicador.deleted$ | async)">
+                <h4>Error:</h4>
+                <p>Someone else has <b>deleted</b> this document. You can not save anymore.</p>
+            </div>
+
+            <md-input-container>
+                Name: <input mdInput type="string" [ngModel]="publicador.name" name="name" />
+            </md-input-container>
+
+            <md-input-container>
+                Age: <input mdInput type="number" [(ngModel)]="publicador.age" name="age" />
+            </md-input-container>
+            <br />
+            <button md-raised-button color="primary" (click)="cancel()">cancel</button>
+            <button *ngIf="!(publicador.deleted$ | async)" md-raised-button color="primary" (click)=submit()>submit</button>
+
+        </ion-item>
+    </ion-list>
+</ion-content>
+`

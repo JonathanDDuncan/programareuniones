@@ -8,12 +8,12 @@ import { Injectable } from '@angular/core';
  */
 import RxDB from 'rxdb/dist/es/core';
 declare var require: any;
- 
+
 
 // import modules
 import RxDBSchemaCheckModule from 'rxdb/dist/es/modules/schema-check';
 // if (ENV === 'development') {
- if (true) {
+if (true) {
     // schema-checks should be used in dev-mode only
     RxDB.plugin(RxDBSchemaCheckModule);
 }
@@ -48,9 +48,7 @@ let collections = [
         name: 'publicadores',
         schema: require('../schemas/programa.schema.json'),
         methods: {
-            hpPercent() {
-                return this.hp / this.maxHP * 100;
-            }
+ 
         },
         sync: true
     }
@@ -88,12 +86,12 @@ export class ProgramaDatabaseService {
 
         // hooks
         console.log('DatabaseService: add hooks');
-        db.collections.publicadores.preInsert(function(docObj) {
+        db.collections.publicadores.preInsert(function (docObj) {
             const name = docObj.name;
             return db.collections.publicadores.findOne({ name }).exec()
                 .then(has => {
                     if (has != null) {
-                        alert('another hero already has the name ' + name);
+                        alert('another publicador already has the name ' + name);
                         throw new Error('name already there');
                     }
                     return db;

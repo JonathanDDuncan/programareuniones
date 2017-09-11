@@ -8,12 +8,13 @@ import { Observable } from 'rxjs';
 
 declare interface RxPublicadorDocumentData {
     name?: string;
+    age?: number;
    
 }
 
 export class RxPublicadorDocument extends RxDB.RxDocument {
     name: string;
-    
+    age?: number;
 }
 
 declare class RxPublicadorCollection extends RxDB.RxCollection<RxPublicadorDocument> {

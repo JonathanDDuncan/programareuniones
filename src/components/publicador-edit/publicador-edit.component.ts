@@ -11,7 +11,7 @@ declare var require: any;
 })
 export class PublicadorEditComponent {
 
-    @Input('hero') hero: any;
+    @Input('publicador') publicador: any;
     @Output('done') done = new EventEmitter();
 
     constructor(
@@ -19,12 +19,12 @@ export class PublicadorEditComponent {
     ) { }
 
     async submit() {
-        await this.hero.save();
+        await this.publicador.save();
         this.done.emit(true);
     }
 
     async cancel() {
-        this.hero.resync();
+        this.publicador.resync();
         this.done.emit(false);
     }
 }

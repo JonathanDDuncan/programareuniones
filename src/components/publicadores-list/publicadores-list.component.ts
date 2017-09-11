@@ -1,6 +1,10 @@
+import { ModalController, NavParams} from 'ionic-angular';
 import { Component, OnInit, OnDestroy, NgZone, Output, EventEmitter } from '@angular/core';
 import { ProgramaDatabaseService } from '../../services/programadatabase.service';
+import { PublicadorNewEditComponent } from '../../pages/publicadoredit/publicadoredit.component';
+ 
 
+import {   Platform,  ViewController } from 'ionic-angular';
 import * as RxDBTypes from '../../schemas/RxProgramaDB.d';
 declare var require: any;
 @Component({
@@ -12,24 +16,34 @@ declare var require: any;
 export class PublicadoresListComponent implements OnInit, OnDestroy {
 
 
-    heroes: RxDBTypes.RxPublicadorDocument[] | RxDBTypes.RxPublicadorDocument;
+    publicadores: RxDBTypes.RxPublicadorDocument[] | RxDBTypes.RxPublicadorDocument;
     sub;
 
     @Output('edit') editChange: EventEmitter<RxDBTypes.RxPublicadorDocument> = new EventEmitter();
-    set edit(hero) {
-        console.log('editHero: ' + hero.name);
-        this.editChange.emit(hero);
+    set edit(publicador) {
+        debugger;
+        // console.log('editPublicador: ' + publicador.name);
+        // this.editChange.emit(publicador);
     }
-    editHero(hero) {
-        this.edit = hero;
+    editPublicador(publicador) {
+        // this.edit = publicador;
+        debugger;
+        let modal = this.modalCtrl.create(PublicadorNewEditComponent, {publicador1: publicador});
+        modal.present();
     }
-    deleteHero(hero) {
-        hero.remove();
+    deletePublicador(publicador) {
+        publicador.remove();
     }
 
+    openModal(characterNum) {
+        
+            let modal = this.modalCtrl.create(PublicadorNewEditComponent, characterNum);
+            modal.present();
+          }
     constructor(
         private databaseService: ProgramaDatabaseService,
-        private zone: NgZone
+        private zone: NgZone,
+        public modalCtrl: ModalController
     ) {
     }
 
@@ -37,12 +51,12 @@ export class PublicadoresListComponent implements OnInit, OnDestroy {
 
     private async _show() {
         const db = await this.databaseService.get();
-        const heroes$ = db.publicadores
+        const publicadores$ = db.publicadores
             .find()
             .sort({ name: 1 })
             .$;
-        this.sub = heroes$.subscribe(heroes => {
-            this.heroes = heroes;
+        this.sub = publicadores$.subscribe(publicadores => {
+            this.publicadores = publicadores;
             this.zone.run(() => { });
         });
     }

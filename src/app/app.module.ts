@@ -26,6 +26,8 @@ import { TutorialPage } from '../pages/tutorial/tutorial';
 import { WelcomePage } from '../pages/welcome/welcome';
 // import { RXDBSampleComponent } from '../pages/rxdbsample/rxdbsample.component';
 import { RXDBPublicadorSampleComponent } from '../pages/rxdbpublicadorsample/rxdbpublicadorsample.component';
+import {PublicadorNewEditComponent } from '../pages/publicadoredit/publicadoredit.component';
+import {ProgramaDatabaseService } from '../services/programadatabase.service';
 
 import { Api } from '../providers/api';
 import { Items } from '../mocks/providers/items';
@@ -92,7 +94,8 @@ export function provideSettings(storage: Storage) {
     RXDBPublicadorSampleComponent,
     PublicadorInsertComponent,
     PublicadorEditComponent,
-    PublicadoresListComponent
+    PublicadoresListComponent,
+    PublicadorNewEditComponent
   ],
   imports: [
     BrowserModule,
@@ -130,7 +133,9 @@ export function provideSettings(storage: Storage) {
     TutorialPage,
     WelcomePage,
     // RXDBSampleComponent,
-    RXDBPublicadorSampleComponent
+    RXDBPublicadorSampleComponent,
+    PublicadorEditComponent,
+    PublicadorNewEditComponent
   ],
   providers: [
     Api,
@@ -140,6 +145,7 @@ export function provideSettings(storage: Storage) {
     GoogleMaps,
     SplashScreen,
     StatusBar,
+    ProgramaDatabaseService,
     { provide: Settings, useFactory: provideSettings, deps: [Storage] },
     // Keep this to enable Ionic's runtime error handling during development
     { provide: ErrorHandler, useClass: IonicErrorHandler }

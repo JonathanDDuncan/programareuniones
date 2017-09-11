@@ -1,19 +1,52 @@
-<div class="loading" *ngIf="!heroes" class="hero-list-component">
+<!-- <md-list *ngIf="publicadores" class="publicador-list-component">
+    <md-list-item *ngFor="let publicador of publicadores" >
+        
+    </md-list-item>
+</md-list> -->
+<div class="loading" *ngIf="!publicadores" class="publicador-list-component">
     <md-spinner class="app-spinner"></md-spinner>
 </div>
+<ion-list *ngIf="publicadores" class="publicador-list-component">
+    <div ion-item *ngFor="let publicador of publicadores" class="listPublicador">
+    <button (click)="editPublicador(publicador)" >  
+            <!-- (click)="itemSelected(item)" -->
+      {{ item }}
+     
+      <div class="name">
+        {{publicador.name}}
+        
+      </div>
 
-<md-list *ngIf="heroes" class="hero-list-component">
-    <md-list-item *ngFor="let hero of heroes" class="listHero">
-        <div class="color-box" [style.background-color]="hero.color"></div>
-        <div class="name">
-          {{hero.name}}
-          <div class="life">
-            <div class="currentPercent" [style.width]="hero.hpPercent() + '%'"></div>
-          </div>
+    </button>
+    <div class="actions">
+            
+            <i class="fa fa-trash-o" aria-hidden="true" (click)="deletePublicador(publicador)">Delete</i>
         </div>
-        <div class="actions">
-            <i class="fa fa-pencil-square-o" aria-hidden="true" (click)="editHero(hero)"></i>
-            <i class="fa fa-trash-o" aria-hidden="true" (click)="deleteHero(hero)"></i>
-        </div>
-    </md-list-item>
-</md-list>
+</div>
+   
+</ion-list>
+
+<ion-header>
+        <ion-navbar>
+          <ion-title>Modals</ion-title>
+        </ion-navbar>
+      </ion-header>
+      
+      <ion-content>
+      
+        <ion-list>
+          <ion-list-header>
+            Hobbits
+          </ion-list-header>
+          <a ion-item (click)="openModal({charNum: 0})">
+            Gollum
+          </a>
+          <a ion-item (click)="openModal({charNum: 1})">
+            Frodo Baggins
+          </a>
+          <a ion-item (click)="openModal({charNum: 2})">
+            Sam
+          </a>
+        </ion-list>
+      
+      </ion-content>
