@@ -7,12 +7,12 @@
   "properties": {
     "id": {
       "primary": true,
-      "type": "boolean",
-      "default": false
+      "type": "string",
+      "default": ""
     },
     "name": {
-      "type": "boolean",
-      "default": false
+      "type": "string",
+      "default":  ""
     },
     "presidentesabado": {
       "type": "boolean",
@@ -92,5 +92,5 @@
     }
 
   },
-  "required": [""]
+  "required": []
 }

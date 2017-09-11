@@ -1,6 +1,6 @@
 <!-- <md-list *ngIf="publicadores" class="publicador-list-component">
     <md-list-item *ngFor="let publicador of publicadores" >
-        
+
     </md-list-item>
 </md-list> -->
 <div class="loading" *ngIf="!publicadores" class="publicador-list-component">
@@ -8,22 +8,22 @@
 </div>
 <ion-list *ngIf="publicadores" class="publicador-list-component">
     <div ion-item *ngFor="let publicador of publicadores" class="listPublicador">
-    <button (click)="editPublicador(publicador)" >  
+    <button (click)="editPublicador(publicador)" >
             <!-- (click)="itemSelected(item)" -->
-      {{ item }}
-     
+
+
       <div class="name">
         {{publicador.name}}
-        
+
       </div>
 
     </button>
     <div class="actions">
-            
+
             <i class="fa fa-trash-o" aria-hidden="true" (click)="deletePublicador(publicador)">Delete</i>
         </div>
 </div>
-   
+
 </ion-list>
 
 <ion-header>
@@ -31,22 +31,3 @@
           <ion-title>Modals</ion-title>
         </ion-navbar>
       </ion-header>
-      
-      <ion-content>
-      
-        <ion-list>
-          <ion-list-header>
-            Hobbits
-          </ion-list-header>
-          <a ion-item (click)="openModal({charNum: 0})">
-            Gollum
-          </a>
-          <a ion-item (click)="openModal({charNum: 1})">
-            Frodo Baggins
-          </a>
-          <a ion-item (click)="openModal({charNum: 2})">
-            Sam
-          </a>
-        </ion-list>
-      
-      </ion-content>

@@ -25,15 +25,27 @@
 
       {{ '}' }} <br/> declare class Rx{{item.classname}}Collection extends RxDB.RxCollection &lt;Rx{{item.classname}}Document&gt;
       {{ '{' }} <br/> {{ '}' }} <br/>
-  </div>
+
+  <p>//Default object</p>
+
+      let default{{item.classname}} =
+      {{ ' {' }}
+          <p *ngFor="let p1 of item.schema.properties | values:'key'">
+              {{p1.k}}:{{p1.default}}, <br/>
+          </p>
+          {{ '}' }}
+      </div>
   export class RxProgramasDatabase extends RxDB.RxDatabase {{ '{' }}<br/>
   <div *ngFor="let item of scaffolding">
     {{item.plural}}?: Rx{{item.classname}}Collection;<br/>
   </div>
   {{ '}' }}<br/> export default {{ '{' }}
   <div *ngFor="let item of scaffolding">
-    Rx{{item.classname}}Document,<br/> Rx{{item.classname}}Collection,
-    <br/>
+    Rx{{item.classname}}Document,<br/>
+     Rx{{item.classname}}Collection,<br/>
+     default{{item.classname}},<br/>
   </div>
   RxProgramasDatabase {{ '}' }};<br/> declare var require: any;
+
+
 </ion-content>

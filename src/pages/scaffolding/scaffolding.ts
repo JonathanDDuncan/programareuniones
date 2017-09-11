@@ -20,7 +20,7 @@ export class ScaffoldingPage {
   {
     classname: "Publicador",
     plural: "publicadores",
-    schema: require('../../schemas/programa.schema.json')
+    schema: require('../../schemas/publicador.schema.json')
   };
 
   Required(arr, text, primary) {

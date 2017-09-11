@@ -6,9 +6,9 @@ import * as RxDB from 'rxdb';
 import { Observable } from 'rxjs';
 // publicadores schema
 declare interface RxPublicadorDocumentData {
-  id?: boolean;
+  id?: string;
 
-  name?: boolean;
+  name?: string;
 
   presidentesabado?: boolean;
 
@@ -50,9 +50,9 @@ declare interface RxPublicadorDocumentData {
 
 }
 export class RxPublicadorDocument extends RxDB.RxDocument {
-  id: boolean;
+  id: string;
 
-  name?: boolean;
+  name?: string;
 
   presidentesabado?: boolean;
 
@@ -95,6 +95,7 @@ export class RxPublicadorDocument extends RxDB.RxDocument {
 }
 declare class RxPublicadorCollection extends RxDB.RxCollection<RxPublicadorDocument> {
 }
+
 // consejos schema
 declare interface RxConsejoDocumentData {
   name?: string;
@@ -110,6 +111,7 @@ export class RxConsejoDocument extends RxDB.RxDocument {
 }
 declare class RxConsejoCollection extends RxDB.RxCollection<RxConsejoDocument> {
 }
+
 export class RxProgramasDatabase extends RxDB.RxDatabase {
   publicadores?: RxPublicadorCollection;
   consejos?: RxConsejoCollection;
@@ -117,8 +119,10 @@ export class RxProgramasDatabase extends RxDB.RxDatabase {
 export default {
   RxPublicadorDocument,
   RxPublicadorCollection,
+
   RxConsejoDocument,
   RxConsejoCollection,
+
   RxProgramasDatabase
 };
 declare var require: any;

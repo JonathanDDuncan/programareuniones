@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-// import 'babel-polyfill';    
+// import 'babel-polyfill';
 // batteries-included
 // import RxDB from 'rxdb';
 
@@ -46,9 +46,9 @@ RxDB.plugin(adapters[useAdapter]);
 let collections = [
     {
         name: 'publicadores',
-        schema: require('../schemas/programa.schema.json'),
+        schema: require('../schemas/publicador.schema.json'),
         methods: {
- 
+
         },
         sync: true
     }
@@ -87,12 +87,12 @@ export class ProgramaDatabaseService {
         // hooks
         console.log('DatabaseService: add hooks');
         db.collections.publicadores.preInsert(function (docObj) {
-            const name = docObj.name;
-            return db.collections.publicadores.findOne({ name }).exec()
+            const id = docObj.id;
+            return db.collections.publicadores.findOne({ id }).exec()
                 .then(has => {
                     if (has != null) {
-                        alert('another publicador already has the name ' + name);
-                        throw new Error('name already there');
+                        alert('another publicador already has the id ' + id);
+                        throw new Error('id already there');
                     }
                     return db;
                 });
@@ -107,6 +107,30 @@ export class ProgramaDatabaseService {
 
         return db;
     }
+   public defaultPublicador(id:string){
+      return {
+      id: id,
+      name: "",
+      presidentesabado: false,
+      discurso1: false,
+      lecturabiblia: false,
+      oracion1: false,
+      oracion2: false,
+      ayudante: false,
+      primeraconversacion: false,
+      revisita: false,
+      cursobiblico: false,
+      nvc1: false,
+      nvc2: false,
+      estudiocongregacion: false,
+      lectorestudiocongregacion: false,
+      lectoreatalaya: false,
+      camara: false,
+      aparatos: false,
+      cronometro: false,
+      presidentedomingo: false,
+      smmdiscurso: false,
+    }};
 
     get(): Promise<RxDBTypes.RxProgramasDatabase> {
         if (ProgramaDatabaseService.dbPromise)

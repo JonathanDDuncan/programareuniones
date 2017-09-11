@@ -2,6 +2,7 @@ import { Component, ViewChild, OnInit } from '@angular/core';
 import { ProgramaDatabaseService } from '../../services/programadatabase.service';
 
 import * as randomInt from 'random-int';
+import * as uuid from 'uuid/v4';
 declare var require: any;
 @Component({
     selector: 'publicador-insert',
@@ -25,23 +26,25 @@ export class PublicadorInsertComponent implements OnInit {
 
     async reset() {
         const db = await this.databaseService.get();
-        this.tempDoc = db.publicadores.newDocument({
-           age: 0 
-        });
+        var uuidpublicador = uuid();
+        debugger;
+        var default1 = this.databaseService.defaultPublicador(uuidpublicador);
+        this.tempDoc = db.publicadores.newDocument(default1);
     }
 
     async submit() {
         console.log('PublicadorInsertComponent.submit():');
-        console.log('name: ' + this.tempDoc.name);
-        console.log('age: ' + this.tempDoc.age);
-
+        // console.log('name: ' + this.tempDoc.name);
+        // console.log('age: ' + this.tempDoc.age);
+        console.log('tempDoc: ' + JSON.stringify(this.tempDoc));
         try {
-            debugger;
+
             await this.tempDoc.save();
             await this.reset();
         } catch (err) {
             alert('Error: Please check console');
             console.error('publicador-insert.submit(): error:');
+
             throw err;
         }
 
