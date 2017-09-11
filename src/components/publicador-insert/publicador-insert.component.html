@@ -3,9 +3,10 @@
         <input mdInput #input [(ngModel)]="tempDoc.name" [autofocus]="true" name="name" placeholder="Name" />
     </md-input-container>
     <br/>
-    <md-input-container>
+    <!-- <md-input-container>
         <input mdInput [(ngModel)]="tempDoc.color" name="color" placeholder="Color" />
-    </md-input-container>
+    </md-input-container> -->
     <br/>
     <button md-raised-button color="primary" (click)=submit()>insert</button>
+{{tempDoc | json}}
 </form>

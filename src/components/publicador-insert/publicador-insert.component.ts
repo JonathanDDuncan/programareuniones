@@ -26,21 +26,22 @@ export class PublicadorInsertComponent implements OnInit {
     async reset() {
         const db = await this.databaseService.get();
         this.tempDoc = db.publicadores.newDocument({
-            maxHP: randomInt(100, 1000)
+           
         });
     }
 
     async submit() {
-        console.log('HeroInsertComponent.submit():');
+        console.log('PublicadorInsertComponent.submit():');
         console.log('name: ' + this.tempDoc.name);
         console.log('color: ' + this.tempDoc.color);
 
         try {
+            debugger;
             await this.tempDoc.save();
             await this.reset();
         } catch (err) {
             alert('Error: Please check console');
-            console.error('hero-insert.submit(): error:');
+            console.error('publicador-insert.submit(): error:');
             throw err;
         }
 

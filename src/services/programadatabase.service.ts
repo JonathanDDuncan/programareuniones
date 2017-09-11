@@ -89,12 +89,12 @@ export class ProgramaDatabaseService {
         // hooks
         console.log('DatabaseService: add hooks');
         db.collections.publicadores.preInsert(function(docObj) {
-            const color = docObj.color;
-            return db.collections.publicadores.findOne({ color }).exec()
+            const name = docObj.name;
+            return db.collections.publicadores.findOne({ name }).exec()
                 .then(has => {
                     if (has != null) {
-                        alert('another hero already has the color ' + color);
-                        throw new Error('color already there');
+                        alert('another hero already has the name ' + name);
+                        throw new Error('name already there');
                     }
                     return db;
                 });
