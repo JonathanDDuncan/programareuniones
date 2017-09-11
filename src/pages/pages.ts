@@ -1,6 +1,7 @@
 import { ListMasterPage } from './list-master/list-master';
 import { ContentPage } from './content/content';
 import { PublicadoresPage } from './publicadores/publicadores';
+import { ScaffoldingPage } from './scaffolding/scaffolding';
 import { SearchPage } from './search/search';
 import { SettingsPage } from './settings/settings';
 import { TabsPage } from './tabs/tabs';
@@ -17,6 +18,6 @@ export const FirstRunPage = TabsPage;
 export const MainPage = TabsPage;
 
 // The initial root pages for our tabs (remove if not using tabs)
-export const Tab1Root = ContentPage;
+export const Tab1Root = ScaffoldingPage ;
 export const Tab2Root = RXDBPublicadorSampleComponent;
-export const Tab3Root = PublicadoresPage;
+export const Tab3Root = ContentPage;

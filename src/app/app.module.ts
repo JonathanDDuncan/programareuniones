@@ -12,6 +12,7 @@ import { MyApp } from './app.component';
 import { CardsPage } from '../pages/cards/cards';
 import { ContentPage } from '../pages/content/content';
 import { PublicadoresPage } from '../pages/publicadores/publicadores';
+import { ScaffoldingPage } from '../pages/scaffolding/scaffolding';
 import { ItemCreatePage } from '../pages/item-create/item-create';
 import { ItemDetailPage } from '../pages/item-detail/item-detail';
 import { ListMasterPage } from '../pages/list-master/list-master';
@@ -28,6 +29,8 @@ import { WelcomePage } from '../pages/welcome/welcome';
 import { RXDBPublicadorSampleComponent } from '../pages/rxdbpublicadorsample/rxdbpublicadorsample.component';
 import {PublicadorNewEditComponent } from '../pages/publicadoredit/publicadoredit.component';
 import {ProgramaDatabaseService } from '../services/programadatabase.service';
+
+import {ValuesPipe} from '../components/pipes/pipes'
 
 import { Api } from '../providers/api';
 import { Items } from '../mocks/providers/items';
@@ -75,6 +78,7 @@ export function provideSettings(storage: Storage) {
     CardsPage,
     ContentPage,
     PublicadoresPage,
+    ScaffoldingPage,
     ItemCreatePage,
     ItemDetailPage,
     ListMasterPage,
@@ -95,7 +99,8 @@ export function provideSettings(storage: Storage) {
     PublicadorInsertComponent,
     PublicadorEditComponent,
     PublicadoresListComponent,
-    PublicadorNewEditComponent
+    PublicadorNewEditComponent,
+    ValuesPipe
   ],
   imports: [
     BrowserModule,
@@ -120,6 +125,7 @@ export function provideSettings(storage: Storage) {
     CardsPage,
     ContentPage,
     PublicadoresPage,
+    ScaffoldingPage,
     ItemCreatePage,
     ItemDetailPage,
     ListMasterPage,

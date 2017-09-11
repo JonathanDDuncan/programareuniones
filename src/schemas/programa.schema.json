@@ -1,19 +1,96 @@
 {
-    "title": "programa schema",
-    "description": "describes a simple programa",
-    "version": 0,
-    "disableKeyCompression": true,
-    "type": "object",
-    "properties": {
-        "name": {
-            "type": "string",
-            "primary": true,
-            "default": ""
-        },
-        "age": {
-            "type": "number",
-            "default": 0
-        }
-    }, 
-    "required": []
+  "title": "publicadores schema",
+  "description": "describes a simple publicador",
+  "version": 0,
+  "disableKeyCompression": true,
+  "type": "object",
+  "properties": {
+    "id": {
+      "primary": true,
+      "type": "boolean",
+      "default": false
+    },
+    "name": {
+      "type": "boolean",
+      "default": false
+    },
+    "presidentesabado": {
+      "type": "boolean",
+      "default": false
+    },
+    "discurso1": {
+      "type": "boolean",
+      "default": false
+    },
+    "lecturabiblia": {
+      "type": "boolean",
+      "default": false
+    },
+    "oracion1": {
+      "type": "boolean",
+      "default": false
+    },
+    "oracion2": {
+      "type": "boolean",
+      "default": false
+    },
+    "ayudante": {
+      "type": "boolean",
+      "default": false
+    },
+    "primeraconversacion": {
+      "type": "boolean",
+      "default": false
+    },
+    "revisita": {
+      "type": "boolean",
+      "default": false
+    },
+    "cursobiblico": {
+      "type": "boolean",
+      "default": false
+    },
+    "nvc1": {
+      "type": "boolean",
+      "default": false
+    },
+    "nvc2": {
+      "type": "boolean",
+      "default": false
+    },
+    "estudiocongregacion": {
+      "type": "boolean",
+      "default": false
+    },
+    "lectorestudiocongregacion": {
+      "type": "boolean",
+      "default": false
+    },
+    "lectoreatalaya": {
+      "type": "boolean",
+      "default": false
+    },
+    "camara": {
+      "type": "boolean",
+      "default": false
+    },
+    "aparatos": {
+      "type": "boolean",
+      "default": false
+    },
+    "cronometro": {
+      "type": "boolean",
+      "default": false
+    },
+    "presidentedomingo": {
+      "type": "boolean",
+      "default": false
+    },
+    "smmdiscurso": {
+      "type": "boolean",
+      "default": false
+    }
+
+  },
+  "required": [""]
 }
