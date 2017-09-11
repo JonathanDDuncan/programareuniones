@@ -2,62 +2,38 @@
   <ion-navbar>
     <ion-title>
       Scaffolding
+      <h1>Rxdb.d.ts</h1>
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content class="scaffolding" padding>
-  <h1>Rxdb.d.ts</h1>
-
-
-            /**<br/>
-            * custom typings so typescript knows about the schema-fields<br/>
-            * @type  {{ '{' }}[type]{{ '}' }} <br/>
-            */<br/>
-
-            import * as RxDB from 'rxdb';<br/>
-            import {{ '{' }}  Observable  {{ '}' }} from 'rxjs';<br/>
+  /**<br/> * custom typings so typescript knows about the schema-fields<br/> * @type {{ '{' }}[type]{{ '}' }} <br/> */
+  <br/> import * as RxDB from 'rxdb';<br/> import {{ '{' }} Observable {{ '}' }} from 'rxjs';<br/>
   <div *ngFor="let item of scaffolding">
 
-        <p>
-          {{"//"}} {{ item.schema.title}}<br/>
+    <p>
+      {{"//"}} {{ item.schema.title}}<br/> declare interface Rx{{item.classname}}DocumentData<br/> {{ '{' }}<br/>
+      <p *ngFor="let p1 of item.schema.properties | values:'key'">
+        {{p1.k}}?: {{p1.type}};
+      </p>
 
-          declare interface Rx{{item.classname}}DocumentData<br/>
-           {{ '{' }}<br/>
-           <p *ngFor="let p1 of item.schema.properties | values:'key'">
-            {{p1.k}}?: {{p1.type}};
-          </p>
+      {{ '}' }} <br/> export class Rx{{item.classname}}Document extends RxDB.RxDocument <br/> {{ '{' }}<br/>
+      <p *ngFor="let p1 of item.schema.properties | values:'key'">
+        {{p1.k}}<span *ngIf="Required(item.schema.required, p1.k, p1.primary)">?</span>: {{p1.type}};
+      </p>
 
-          {{ '}' }} <br/>
-
-                export class Rx{{item.classname}}Document extends RxDB.RxDocument <br/>
-          {{ '{' }}<br/>
-          <p *ngFor="let p1 of item.schema.properties | values:'key'">
-           {{p1.k}}<span *ngIf="Required(item.schema.required, p1.k, p1.primary)">?</span>: {{p1.type}};
-         </p>
-
-         {{ '}' }} <br/>
-
-
-         declare class Rx{{item.classname}}Collection extends RxDB.RxCollection &lt;Rx{{item.classname}}Document&gt;  {{ '{' }} <br/>
-         {{ '}' }} <br/>
-        </div>
-         export class RxProgramasDatabase extends RxDB.RxDatabase {{ '{' }}<br/>
-         <div *ngFor="let item of scaffolding">
-         {{item.plural}}?: Rx{{item.classname}}Collection;<br/>
-         </div>
-         {{ '}' }}<br/>
-
-
-
-
-         export default {{ '{' }}
-         <div *ngFor="let item of scaffolding">
-          Rx{{item.classname}}Document,<br/>
-          Rx{{item.classname}}Collection,<br/>
-        </div>
-RxProgramasDatabase
-{{ '}' }};<br/>
-
-declare var require: any;
+      {{ '}' }} <br/> declare class Rx{{item.classname}}Collection extends RxDB.RxCollection &lt;Rx{{item.classname}}Document&gt;
+      {{ '{' }} <br/> {{ '}' }} <br/>
+  </div>
+  export class RxProgramasDatabase extends RxDB.RxDatabase {{ '{' }}<br/>
+  <div *ngFor="let item of scaffolding">
+    {{item.plural}}?: Rx{{item.classname}}Collection;<br/>
+  </div>
+  {{ '}' }}<br/> export default {{ '{' }}
+  <div *ngFor="let item of scaffolding">
+    Rx{{item.classname}}Document,<br/> Rx{{item.classname}}Collection,
+    <br/>
+  </div>
+  RxProgramasDatabase {{ '}' }};<br/> declare var require: any;
 </ion-content>

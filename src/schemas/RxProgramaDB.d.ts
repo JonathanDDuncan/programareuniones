@@ -5,123 +5,120 @@
 import * as RxDB from 'rxdb';
 import { Observable } from 'rxjs';
 // publicadores schema
-declare interface RxPublicadorDocumentData
-{
-id?: boolean;
+declare interface RxPublicadorDocumentData {
+  id?: boolean;
 
-name?: boolean;
+  name?: boolean;
 
-presidentesabado?: boolean;
+  presidentesabado?: boolean;
 
-discurso1?: boolean;
+  discurso1?: boolean;
 
-lecturabiblia?: boolean;
+  lecturabiblia?: boolean;
 
-oracion1?: boolean;
+  oracion1?: boolean;
 
-oracion2?: boolean;
+  oracion2?: boolean;
 
-ayudante?: boolean;
+  ayudante?: boolean;
 
-primeraconversacion?: boolean;
+  primeraconversacion?: boolean;
 
-revisita?: boolean;
+  revisita?: boolean;
 
-cursobiblico?: boolean;
+  cursobiblico?: boolean;
 
-nvc1?: boolean;
+  nvc1?: boolean;
 
-nvc2?: boolean;
+  nvc2?: boolean;
 
-estudiocongregacion?: boolean;
+  estudiocongregacion?: boolean;
 
-lectorestudiocongregacion?: boolean;
+  lectorestudiocongregacion?: boolean;
 
-lectoreatalaya?: boolean;
+  lectoreatalaya?: boolean;
 
-camara?: boolean;
+  camara?: boolean;
 
-aparatos?: boolean;
+  aparatos?: boolean;
 
-cronometro?: boolean;
+  cronometro?: boolean;
 
-presidentedomingo?: boolean;
+  presidentedomingo?: boolean;
 
-smmdiscurso?: boolean;
-
-}
-export class RxPublicadorDocument extends RxDB.RxDocument
-{
-id: boolean;
-
-name?: boolean;
-
-presidentesabado?: boolean;
-
-discurso1?: boolean;
-
-lecturabiblia?: boolean;
-
-oracion1?: boolean;
-
-oracion2?: boolean;
-
-ayudante?: boolean;
-
-primeraconversacion?: boolean;
-
-revisita?: boolean;
-
-cursobiblico?: boolean;
-
-nvc1?: boolean;
-
-nvc2?: boolean;
-
-estudiocongregacion?: boolean;
-
-lectorestudiocongregacion?: boolean;
-
-lectoreatalaya?: boolean;
-
-camara?: boolean;
-
-aparatos?: boolean;
-
-cronometro?: boolean;
-
-presidentedomingo?: boolean;
-
-smmdiscurso?: boolean;
+  smmdiscurso?: boolean;
 
 }
-declare class RxPublicadorCollection extends RxDB.RxCollection <RxPublicadorDocument> {
+export class RxPublicadorDocument extends RxDB.RxDocument {
+  id: boolean;
+
+  name?: boolean;
+
+  presidentesabado?: boolean;
+
+  discurso1?: boolean;
+
+  lecturabiblia?: boolean;
+
+  oracion1?: boolean;
+
+  oracion2?: boolean;
+
+  ayudante?: boolean;
+
+  primeraconversacion?: boolean;
+
+  revisita?: boolean;
+
+  cursobiblico?: boolean;
+
+  nvc1?: boolean;
+
+  nvc2?: boolean;
+
+  estudiocongregacion?: boolean;
+
+  lectorestudiocongregacion?: boolean;
+
+  lectoreatalaya?: boolean;
+
+  camara?: boolean;
+
+  aparatos?: boolean;
+
+  cronometro?: boolean;
+
+  presidentedomingo?: boolean;
+
+  smmdiscurso?: boolean;
+
+}
+declare class RxPublicadorCollection extends RxDB.RxCollection<RxPublicadorDocument> {
 }
 // consejos schema
-declare interface RxConsejoDocumentData
-{
-name?: string;
+declare interface RxConsejoDocumentData {
+  name?: string;
 
-consejo?: number;
-
-}
-export class RxConsejoDocument extends RxDB.RxDocument
-{
-name: string;
-
-consejo: number;
+  consejo?: number;
 
 }
-declare class RxConsejoCollection extends RxDB.RxCollection <RxConsejoDocument> {
+export class RxConsejoDocument extends RxDB.RxDocument {
+  name: string;
+
+  consejo: number;
+
+}
+declare class RxConsejoCollection extends RxDB.RxCollection<RxConsejoDocument> {
 }
 export class RxProgramasDatabase extends RxDB.RxDatabase {
-publicadores?: RxPublicadorCollection;
-consejos?: RxConsejoCollection;
+  publicadores?: RxPublicadorCollection;
+  consejos?: RxConsejoCollection;
 }
 export default {
-RxPublicadorDocument,
-RxPublicadorCollection,
-RxConsejoDocument,
-RxConsejoCollection,
-RxProgramasDatabase };
+  RxPublicadorDocument,
+  RxPublicadorCollection,
+  RxConsejoDocument,
+  RxConsejoCollection,
+  RxProgramasDatabase
+};
 declare var require: any;
