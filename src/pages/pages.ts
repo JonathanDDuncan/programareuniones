@@ -18,6 +18,6 @@ export const FirstRunPage = TabsPage;
 export const MainPage = TabsPage;
 
 // The initial root pages for our tabs (remove if not using tabs)
-export const Tab1Root = ScaffoldingPage ;
-export const Tab2Root = RXDBPublicadorSampleComponent;
+export const Tab1Root = RXDBPublicadorSampleComponent;
+export const Tab2Root = ScaffoldingPage;
 export const Tab3Root = ContentPage;
