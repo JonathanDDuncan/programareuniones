@@ -54,5 +54,9 @@ export class PublicadorNewInsertComponent {
 
   }
 
+  displayDate(date:number ){
+    var d = new Date(date);
+   return d.toLocaleString();
+  }
 
 }

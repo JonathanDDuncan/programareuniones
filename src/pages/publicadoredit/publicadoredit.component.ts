@@ -33,6 +33,7 @@ export class PublicadorNewEditComponent {
     this.viewCtrl.dismiss();
   }
   async submit() {
+    this.publicador.modificado = this.databaseService.getDate();
     await this.publicador.save();
     this.done.emit(true);
     this.viewCtrl.dismiss();
@@ -42,5 +43,10 @@ export class PublicadorNewEditComponent {
     this.publicador.resync();
     this.done.emit(false);
     this.viewCtrl.dismiss();
+  }
+
+  displayDate(date:number ){
+    var d = new Date(date);
+   return d.toLocaleString();
   }
 }

@@ -14,11 +14,19 @@
       <md-card-content>
         <md-list>
           <md-list-item> id: &nbsp;
-            <ion-label  >{{ publicador.id }}</ion-label>
+            <ion-label>{{ publicador.id }}</ion-label>
+          </md-list-item>
+
+          <md-list-item> creado: &nbsp;
+            <ion-label>{{ displayDate(publicador.creado) }}</ion-label>
+          </md-list-item>
+
+          <md-list-item> modificado: &nbsp;
+            <ion-label>{{ displayDate(publicador.modificado) }}</ion-label>
           </md-list-item>
 
           <md-list-item> Nombre Publicador: &nbsp;
-            <ion-label  >{{publicador.name}}</ion-label>
+            <ion-label>{{publicador.name}}</ion-label>
           </md-list-item>
 
           <md-list-item> Presidente Sabado
@@ -100,7 +108,7 @@
         </md-list>
       </md-card-content>
       <md-card-actions> <i class="fa fa-trash-o" aria-hidden="true" (click)="deletePublicador(publicador)">Delete</i> Edit</md-card-actions>
-     </md-card>
+    </md-card>
   </md-list>
 
 </div>

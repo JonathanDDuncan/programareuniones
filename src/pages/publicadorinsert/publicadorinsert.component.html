@@ -19,8 +19,19 @@
             <ion-label>{{ tempDoc.id }}</ion-label>
           </md-list-item>
 
-          <md-list-item> Nombre Publicador
-            <ion-input type="text" [(ngModel)]="tempDoc.name" name="name"></ion-input>
+          <md-list-item> creado: &nbsp;
+            <ion-label>{{ displayDate(tempDoc.creado) }}</ion-label>
+          </md-list-item>
+
+          <md-list-item> modificado: &nbsp;
+            <ion-label>{{ displayDate(tempDoc.modificado)  }}</ion-label>
+          </md-list-item>
+
+          <md-list-item>
+            <ion-item>
+              <ion-label floating>Nombre Publicador</ion-label>
+              <ion-input type="text" [(ngModel)]="tempDoc.name" name="name"></ion-input>
+            </ion-item>
           </md-list-item>
 
 

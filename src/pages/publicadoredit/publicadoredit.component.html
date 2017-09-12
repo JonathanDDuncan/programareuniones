@@ -19,10 +19,20 @@
             <ion-label>{{ publicador.id }}</ion-label>
           </md-list-item>
 
-          <md-list-item> Nombre Publicador
-            <ion-input type="text" [(ngModel)]="publicador.name" name="name"></ion-input>
+          <md-list-item> creado: &nbsp;
+            <ion-label>{{ displayDate(publicador.creado) }}</ion-label>
           </md-list-item>
 
+          <md-list-item> modificado: &nbsp;
+            <ion-label>{{ displayDate(publicador.modificado) }}</ion-label>
+          </md-list-item>
+
+          <md-list-item>
+            <ion-item>
+              <ion-label floating>Nombre Publicador</ion-label>
+              <ion-input type="text" [(ngModel)]="publicador.name" name="name"></ion-input>
+            </ion-item>
+          </md-list-item>
 
           <md-list-item> Presidente Sabado
             <ion-toggle [(ngModel)]="publicador.presidentesabado"> </ion-toggle>
@@ -107,8 +117,8 @@
   </div>
   <md-card-actions>
 
-    <button ion-button  color="primary" (click)="cancel()">cancel</button>
-    <button ion-button *ngIf="!(publicador.deleted$ | async)"   color="primary" (click)=submit()>submit</button>
+    <button ion-button color="primary" (click)="cancel()">cancel</button>
+    <button ion-button *ngIf="!(publicador.deleted$ | async)" color="primary" (click)=submit()>submit</button>
 
   </md-card-actions>
 </md-card>

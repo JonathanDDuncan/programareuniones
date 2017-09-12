@@ -27,7 +27,7 @@ export class PublicadoresListComponent implements OnInit, OnDestroy {
   }
   editPublicador(publicador) {
     // this.edit = publicador;
-    debugger;
+
     let modal = this.modalCtrl.create(PublicadorNewEditComponent, { publicador1: publicador });
     modal.present();
   }
@@ -69,5 +69,9 @@ export class PublicadoresListComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.sub.unsubscribe();
+  }
+  displayDate(date:number ){
+    var d = new Date(date);
+   return d.toLocaleString();
   }
 }

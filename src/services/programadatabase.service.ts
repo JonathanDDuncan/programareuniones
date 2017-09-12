@@ -14,8 +14,8 @@ declare var require: any;
 import RxDBSchemaCheckModule from 'rxdb/dist/es/modules/schema-check';
 // if (ENV === 'development') {
 if (true) {
-    // schema-checks should be used in dev-mode only
-    RxDB.plugin(RxDBSchemaCheckModule);
+  // schema-checks should be used in dev-mode only
+  RxDB.plugin(RxDBSchemaCheckModule);
 }
 
 import RxDBValidateModule from 'rxdb/dist/es/modules/validate';
@@ -35,23 +35,23 @@ RxDB.QueryChangeDetector.enable();
 RxDB.QueryChangeDetector.enableDebugging();
 
 const adapters = {
-    localstorage: require('pouchdb-adapter-localstorage'),
-    websql: require('pouchdb-adapter-websql'),
-    idb: require('pouchdb-adapter-idb')
+  localstorage: require('pouchdb-adapter-localstorage'),
+  websql: require('pouchdb-adapter-websql'),
+  idb: require('pouchdb-adapter-idb')
 };
 
 const useAdapter = 'idb';
 RxDB.plugin(adapters[useAdapter]);
 
 let collections = [
-    {
-        name: 'publicadores',
-        schema: require('../schemas/publicador.schema.json'),
-        methods: {
+  {
+    name: 'publicadores',
+    schema: require('../schemas/publicador.schema.json'),
+    methods: {
 
-        },
-        sync: true
-    }
+    },
+    sync: true
+  }
 ];
 
 console.log('hostname: ' + window.location.hostname);
@@ -62,54 +62,63 @@ if (window.location.hash == '#nosync') doSync = false;
 
 @Injectable()
 export class ProgramaDatabaseService {
-    static dbPromise: Promise<RxDBTypes.RxProgramasDatabase> = null;
-    private async _create(): Promise<RxDBTypes.RxProgramasDatabase> {
-        console.log('DatabaseService: creating database..');
-        const db: RxDBTypes.RxProgramasDatabase = await RxDB.create({
-            name: 'programa',
-            adapter: useAdapter,
-            // password: 'myLongAndStupidPassword' // no password needed
+  static dbPromise: Promise<RxDBTypes.RxProgramasDatabase> = null;
+  private async _create(): Promise<RxDBTypes.RxProgramasDatabase> {
+    console.log('DatabaseService: creating database..');
+    const db: RxDBTypes.RxProgramasDatabase = await RxDB.create({
+      name: 'programa',
+      adapter: useAdapter,
+      // password: 'myLongAndStupidPassword' // no password needed
+    });
+    console.log('DatabaseService: created database');
+    window['db'] = db; // write to window for debugging
+
+    // show leadership in title
+    db.waitForLeadership()
+      .then(() => {
+        console.log('isLeader now');
+        document.title = '♛ ' + document.title;
+      });
+
+    // create collections
+    console.log('DatabaseService: create collections');
+    await Promise.all(collections.map(colData => db.collection(colData)));
+
+    // hooks
+    console.log('DatabaseService: add hooks');
+    db.collections.publicadores.preInsert(function (docObj) {
+      const id = docObj.id;
+      return db.collections.publicadores.findOne({ id }).exec()
+        .then(has => {
+          if (has != null) {
+            alert('another publicador already has the id ' + id);
+            throw new Error('id already there');
+          }
+          return db;
         });
-        console.log('DatabaseService: created database');
-        window['db'] = db; // write to window for debugging
+    });
 
-        // show leadership in title
-        db.waitForLeadership()
-            .then(() => {
-                console.log('isLeader now');
-                document.title = '♛ ' + document.title;
-            });
+    // sync
+    console.log('DatabaseService: sync');
+    collections
+      .filter(col => col.sync)
+      .map(col => col.name)
+      .forEach(colName => db[colName].sync({ remote: syncURL + colName + '/' }));
 
-        // create collections
-        console.log('DatabaseService: create collections');
-        await Promise.all(collections.map(colData => db.collection(colData)));
+    return db;
+  }
 
-        // hooks
-        console.log('DatabaseService: add hooks');
-        db.collections.publicadores.preInsert(function (docObj) {
-            const id = docObj.id;
-            return db.collections.publicadores.findOne({ id }).exec()
-                .then(has => {
-                    if (has != null) {
-                        alert('another publicador already has the id ' + id);
-                        throw new Error('id already there');
-                    }
-                    return db;
-                });
-        });
+  public getDate() {
+    var d = new Date();
+    var date =  d.getTime();
+    return date;
+  };
 
-        // sync
-        console.log('DatabaseService: sync');
-        collections
-            .filter(col => col.sync)
-            .map(col => col.name)
-            .forEach(colName => db[colName].sync({ remote: syncURL + colName + '/' }));
-
-        return db;
-    }
-   public defaultPublicador(id:string){
-      return {
+  public defaultPublicador(id: string) {
+    return {
       id: id,
+      creado: this.getDate(),
+      modificado: this.getDate(),
       name: "",
       presidentesabado: false,
       discurso1: false,
@@ -130,14 +139,15 @@ export class ProgramaDatabaseService {
       cronometro: false,
       presidentedomingo: false,
       smmdiscurso: false,
-    }};
-
-    get(): Promise<RxDBTypes.RxProgramasDatabase> {
-        if (ProgramaDatabaseService.dbPromise)
-            return ProgramaDatabaseService.dbPromise;
-
-        // create database
-        ProgramaDatabaseService.dbPromise = this._create();
-        return ProgramaDatabaseService.dbPromise;
     }
+  };
+
+  get(): Promise<RxDBTypes.RxProgramasDatabase> {
+    if (ProgramaDatabaseService.dbPromise)
+      return ProgramaDatabaseService.dbPromise;
+
+    // create database
+    ProgramaDatabaseService.dbPromise = this._create();
+    return ProgramaDatabaseService.dbPromise;
+  }
 }

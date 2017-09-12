@@ -11,6 +11,16 @@
       "default": "",
       "description": "uuid"
     },
+    "creado": {
+      "type": "number",
+      "default":  "",
+      "description": "Fecha Creado"
+    },
+    "modificado": {
+      "type": "number",
+      "default":  "",
+      "description": "Fecha Modificado"
+    },
     "name": {
       "type": "string",
       "default":  "",

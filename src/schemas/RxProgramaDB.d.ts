@@ -10,6 +10,10 @@ declare interface RxPublicadorDocumentData {
 
   name?: string;
 
+  creado?: number;
+
+  modificado?: number;
+
   presidentesabado?: boolean;
 
   discurso1?: boolean;
@@ -51,6 +55,10 @@ declare interface RxPublicadorDocumentData {
 }
 export class RxPublicadorDocument extends RxDB.RxDocument {
   id: string;
+
+  creado: number;
+
+  modificado: number;
 
   name?: string;
 
