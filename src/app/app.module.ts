@@ -37,11 +37,6 @@ import { Api } from '../providers/api';
 import { Items } from '../mocks/providers/items';
 import { Settings } from '../providers/settings';
 import { User } from '../providers/user';
-// import { HeroInsertComponent } from '../components/hero-insert/hero-insert.component';
-// import { HeroEditComponent } from '../components/hero-edit/hero-edit.component';
-// import { HeroesListComponent } from '../components/heroes-list/heroes-list.component';
-import { PublicadorInsertComponent } from '../components/publicador-insert/publicador-insert.component';
-import { PublicadorEditComponent } from '../components/publicador-edit/publicador-edit.component';
 import { PublicadoresListComponent } from '../components/publicadores-list/publicadores-list.component';
 
 import { Camera } from '@ionic-native/camera';
@@ -92,13 +87,7 @@ export function provideSettings(storage: Storage) {
     TabsPage,
     TutorialPage,
     WelcomePage,
-    // RXDBSampleComponent,
-    // HeroInsertComponent,
-    // HeroEditComponent,
-    // HeroesListComponent,
     RXDBPublicadorSampleComponent,
-    PublicadorInsertComponent,
-    PublicadorEditComponent,
     PublicadoresListComponent,
     PublicadorNewEditComponent,
     PublicadorNewInsertComponent,
@@ -140,9 +129,7 @@ export function provideSettings(storage: Storage) {
     TabsPage,
     TutorialPage,
     WelcomePage,
-    // RXDBSampleComponent,
     RXDBPublicadorSampleComponent,
-    PublicadorEditComponent,
     PublicadorNewEditComponent,
     PublicadorNewInsertComponent
   ],

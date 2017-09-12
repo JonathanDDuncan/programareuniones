@@ -6,7 +6,6 @@ import { SearchPage } from './search/search';
 import { SettingsPage } from './settings/settings';
 import { TabsPage } from './tabs/tabs';
 import { TutorialPage } from './tutorial/tutorial';
-import { RXDBSampleComponent } from './rxdbsample/rxdbsample.component';
 import { RXDBPublicadorSampleComponent } from './rxdbpublicadorsample/rxdbpublicadorsample.component';
 
 // The page the user lands on after opening the app and without a session

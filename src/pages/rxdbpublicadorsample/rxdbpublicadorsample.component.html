@@ -1,16 +1,12 @@
-
-    <div class="content">
-      <h3>RxDB Publicadores</h3>
-
-      <publicador-edit *ngIf="editedHero" [(publicador)]="editedHero" (done)="editedHero=null"></publicador-edit>
-
-      <md-card>
-        <md-card-subtitle>Publicadores</md-card-subtitle>
-        <publicadores-list (edit)="editHero($event)"></publicadores-list>
-      </md-card>
-      <br/>
-      <md-card>
-        <md-card-subtitle>Insert</md-card-subtitle>
-        <button ion-button (click)="insertPublicador()">Add Publicador</button>
-      </md-card>
-    </div>
+<div class="content">
+  <h3>RxDB Publicadores</h3>
+  <md-card>
+    <md-card-subtitle>Publicadores</md-card-subtitle>
+    <publicadores-list (edit)="editHero($event)"></publicadores-list>
+  </md-card>
+  <br/>
+  <md-card>
+    <md-card-subtitle>Insert</md-card-subtitle>
+    <button ion-button (click)="insertPublicador()">Add Publicador</button>
+  </md-card>
+</div>
