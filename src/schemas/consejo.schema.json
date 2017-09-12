@@ -1,0 +1,31 @@
+{
+  "title": "consejos schema",
+  "description": "describes a simple leccion del be",
+  "version": 0,
+  "disableKeyCompression": true,
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "primary": true,
+      "default": ""
+    },
+    "publicadorid": {
+      "type": "string",
+      "default": ""
+    },
+    "leccion": {
+      "type": "number",
+      "default": 0
+      },
+    "fechaasignado": {
+      "type": "number",
+      "default": 0
+    },
+    "proximo": {
+      "type": "number",
+      "default": 0
+    },
+  },
+  "required": ["publicadorid","consejo"]
+}

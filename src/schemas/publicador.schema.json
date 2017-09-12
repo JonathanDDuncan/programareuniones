@@ -13,17 +13,17 @@
     },
     "creado": {
       "type": "number",
-      "default":  "",
+      "default": 0,
       "description": "Fecha Creado"
     },
     "modificado": {
       "type": "number",
-      "default":  "",
+      "default": 0,
       "description": "Fecha Modificado"
     },
     "name": {
       "type": "string",
-      "default":  "",
+      "default": "",
       "description": "Nombre Publicador"
     },
     "presidentesabado": {

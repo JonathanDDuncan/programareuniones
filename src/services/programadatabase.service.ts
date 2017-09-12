@@ -47,9 +47,13 @@ let collections = [
   {
     name: 'publicadores',
     schema: require('../schemas/publicador.schema.json'),
-    methods: {
-
-    },
+    methods: {},
+    sync: true
+  },
+  {
+    name: 'consejos',
+    schema: require('../schemas/consejo.schema.json'),
+    methods: {},
     sync: true
   }
 ];

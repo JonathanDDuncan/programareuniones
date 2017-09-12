@@ -2,7 +2,6 @@
   <ion-navbar>
     <ion-title>
       Scaffolding
-      <h1>Rxdb.d.ts</h1>
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -30,7 +29,13 @@
 
       let default{{item.classname}} = {{ ' {' }}
       <p *ngFor="let p1 of item.schema.properties | values:'key'">
-        {{p1.k}}:{{p1.default}}, <br/>
+
+        <span *ngIf="p1.type === 'string';else non_string">
+           {{p1.k}}:&quot;{{p1.default}}&quot;,
+        </span>
+
+        <ng-template #non_string> {{p1.k}}:{{p1.default}}, </ng-template>
+
       </p>
       {{ '}' }}
   </div>
@@ -41,7 +46,7 @@
   {{ '}' }}<br/> export default {{ '{' }}
   <div *ngFor="let item of scaffolding">
     Rx{{item.classname}}Document,<br/> Rx{{item.classname}}Collection,
-    <br/> default{{item.classname}},
+
     <br/>
   </div>
   <hr> RxProgramasDatabase {{ '}' }};<br/> declare var require: any;
