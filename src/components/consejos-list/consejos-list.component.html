@@ -1,0 +1,35 @@
+<div class="loading" *ngIf="!consejos" class="consejo-list-component">
+  <md-spinner class="app-spinner"></md-spinner>
+</div>
+
+<div *ngIf="consejos" style="overflow-y:scroll;height:300px">
+
+  <md-list style="height:auto">
+    <md-card *ngFor="let consejo of consejos">
+
+      <md-card-title> <button ion-button (click)="editconsejo(consejo)"> {{ consejo.name }}</button></md-card-title>
+      <md-card-content>
+        <md-list>
+          <md-list-item> id: &nbsp;
+            <ion-label>{{ consejo.id }}</ion-label>
+          </md-list-item>
+          <md-list-item> publicadorid: &nbsp;
+              <ion-label>{{ consejo.publicadorid }}</ion-label>
+            </md-list-item>
+
+          <md-list-item> creado: &nbsp;
+            <ion-label>{{ displayDate(consejo.creado) }}</ion-label>
+          </md-list-item>
+
+          <md-list-item> modificado: &nbsp;
+            <ion-label>{{ displayDate(consejo.modificado) }}</ion-label>
+          </md-list-item>
+
+        
+        </md-list>
+      </md-card-content>
+      <md-card-actions> <i class="fa fa-trash-o" aria-hidden="true" (click)="deleteconsejo(consejo)">Delete</i> Edit</md-card-actions>
+    </md-card>
+  </md-list>
+
+</div>

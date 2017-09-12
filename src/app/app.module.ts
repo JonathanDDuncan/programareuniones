@@ -27,6 +27,7 @@ import { TutorialPage } from '../pages/tutorial/tutorial';
 import { WelcomePage } from '../pages/welcome/welcome';
 // import { RXDBSampleComponent } from '../pages/rxdbsample/rxdbsample.component';
 import { RXDBPublicadorSampleComponent } from '../pages/rxdbpublicadorsample/rxdbpublicadorsample.component';
+import { RXDBConsejoComponent } from '../pages/rxdbconsejo/rxdbconsejo.component';
 import {PublicadorNewEditComponent } from '../pages/publicadoredit/publicadoredit.component';
 import {PublicadorNewInsertComponent } from '../pages/publicadorinsert/publicadorinsert.component';
 import {ProgramaDatabaseService } from '../services/programadatabase.service';
@@ -38,6 +39,7 @@ import { Items } from '../mocks/providers/items';
 import { Settings } from '../providers/settings';
 import { User } from '../providers/user';
 import { PublicadoresListComponent } from '../components/publicadores-list/publicadores-list.component';
+import { ConsejosListComponent } from '../components/consejos-list/consejos-list.component';
 
 import { Camera } from '@ionic-native/camera';
 import { GoogleMaps } from '@ionic-native/google-maps';
@@ -91,6 +93,8 @@ export function provideSettings(storage: Storage) {
     PublicadoresListComponent,
     PublicadorNewEditComponent,
     PublicadorNewInsertComponent,
+    RXDBConsejoComponent,
+    ConsejosListComponent,
     ValuesPipe
   ],
   imports: [
@@ -131,7 +135,10 @@ export function provideSettings(storage: Storage) {
     WelcomePage,
     RXDBPublicadorSampleComponent,
     PublicadorNewEditComponent,
-    PublicadorNewInsertComponent
+    PublicadorNewInsertComponent,
+    RXDBConsejoComponent,
+    // ConsejoNewEditComponent,
+    // ConsejoNewInsertComponent
   ],
   providers: [
     Api,
