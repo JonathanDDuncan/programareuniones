@@ -26,10 +26,7 @@ export class PublicadorInsertComponent implements OnInit {
 
     async reset() {
         const db = await this.databaseService.get();
-        var uuidpublicador = uuid();
-        debugger;
-        var default1 = this.databaseService.defaultPublicador(uuidpublicador);
-        this.tempDoc = db.publicadores.newDocument(default1);
+        this.tempDoc = db.publicadores.newDocument(this.databaseService.defaultPublicador(uuid()));
     }
 
     async submit() {

@@ -19,6 +19,7 @@ export class ScaffoldingPage {
   publicadores =
   {
     classname: "Publicador",
+    singular: "publicador",
     plural: "publicadores",
     schema: require('../../schemas/publicador.schema.json')
   };
@@ -30,6 +31,7 @@ export class ScaffoldingPage {
   consejo =
   {
     classname: "Consejo",
+    singular: "consejo",
     plural: "consejos",
     schema:
     {

@@ -26,26 +26,54 @@
       {{ '}' }} <br/> declare class Rx{{item.classname}}Collection extends RxDB.RxCollection &lt;Rx{{item.classname}}Document&gt;
       {{ '{' }} <br/> {{ '}' }} <br/>
 
-  <p>//Default object</p>
+      <p>//Default object</p>
 
-      let default{{item.classname}} =
-      {{ ' {' }}
-          <p *ngFor="let p1 of item.schema.properties | values:'key'">
-              {{p1.k}}:{{p1.default}}, <br/>
-          </p>
-          {{ '}' }}
-      </div>
+      let default{{item.classname}} = {{ ' {' }}
+      <p *ngFor="let p1 of item.schema.properties | values:'key'">
+        {{p1.k}}:{{p1.default}}, <br/>
+      </p>
+      {{ '}' }}
+  </div>
   export class RxProgramasDatabase extends RxDB.RxDatabase {{ '{' }}<br/>
   <div *ngFor="let item of scaffolding">
     {{item.plural}}?: Rx{{item.classname}}Collection;<br/>
   </div>
   {{ '}' }}<br/> export default {{ '{' }}
   <div *ngFor="let item of scaffolding">
-    Rx{{item.classname}}Document,<br/>
-     Rx{{item.classname}}Collection,<br/>
-     default{{item.classname}},<br/>
+    Rx{{item.classname}}Document,<br/> Rx{{item.classname}}Collection,
+    <br/> default{{item.classname}},
+    <br/>
   </div>
   RxProgramasDatabase {{ '}' }};<br/> declare var require: any;
+  <div *ngFor="let item of scaffolding">
+
+    <p>//Default object</p>
+
+    let default{{item.classname}} = {{ ' {' }}
+    <p *ngFor="let p1 of item.schema.properties | values:'key'">
+      {{p1.k}}:{{p1.default}}, <br/>
+    </p>
+    {{ '}' }}
+    <p>//List items</p>
+
+  </div>
+  <div *ngFor="let item of scaffolding">
+    &lt;ion-content&gt;
+    &lt;ion-item-group&gt;
+    &lt;ion-item-divider color=&quot;light&quot;&gt;  My Name &lt;/ion-item-divider&gt;
+    <p *ngFor="let p2 of item.schema.properties | values:'key'">
 
 
+
+        &lt;ion-item-divider color=&quot;light&quot;&gt;  {{p2.description}} &lt;/ion-item-divider&gt;
+
+        &lt;ion-toggle disabled checked="{{'{'}}{{'{'}}
+        {{item.singular}}.{{p2.k}} {{ '}' }}{{ '}' }}"&gt; &lt;/ion-toggle&gt;
+
+
+
+    </p>
+    &lt;/ion-item-group&gt;
+    &lt;/ion-content&gt;
+  </div>
 </ion-content>

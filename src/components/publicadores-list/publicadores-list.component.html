@@ -1,33 +1,34 @@
-<!-- <md-list *ngIf="publicadores" class="publicador-list-component">
-    <md-list-item *ngFor="let publicador of publicadores" >
 
-    </md-list-item>
-</md-list> -->
+
+
 <div class="loading" *ngIf="!publicadores" class="publicador-list-component">
-    <md-spinner class="app-spinner"></md-spinner>
-</div>
-<ion-list *ngIf="publicadores" class="publicador-list-component">
-    <div ion-item *ngFor="let publicador of publicadores" class="listPublicador">
-    <button (click)="editPublicador(publicador)" >
-            <!-- (click)="itemSelected(item)" -->
-
-
-      <div class="name">
-        {{publicador.name}}
-
-      </div>
-
-    </button>
-    <div class="actions">
-
-            <i class="fa fa-trash-o" aria-hidden="true" (click)="deletePublicador(publicador)">Delete</i>
-        </div>
+  <md-spinner class="app-spinner"></md-spinner>
 </div>
 
-</ion-list>
 
-<ion-header>
-        <ion-navbar>
-          <ion-title>Modals</ion-title>
-        </ion-navbar>
-      </ion-header>
+
+
+    <div *ngIf="publicadores" >
+
+      <md-list style="overflow-y:scroll;height:600px" >
+        <md-card *ngFor="let publicador of publicadores">
+          <md-card-title> <button ion-button (click)="editPublicador(publicador)"> {{publicador.name}}</button></md-card-title>
+          <md-card-content>
+            <md-list>
+              <md-list-item>Item 1
+                <ion-toggle disabled checked="{{ publicador.camara }}"> </ion-toggle>
+              </md-list-item>
+              <md-list-item>Item 2
+                <ion-toggle disabled checked="{{ publicador.camara }}"> </ion-toggle>
+              </md-list-item>
+              <md-list-item>Item 3
+                <ion-toggle disabled checked="{{ publicador.camara }}"> </ion-toggle>
+              </md-list-item>
+            </md-list>
+          </md-card-content>
+          <md-card-actions> <i class="fa fa-trash-o" aria-hidden="true" (click)="deletePublicador(publicador)">Delete</i> Edit</md-card-actions>
+        </md-card>
+      </md-list>
+
+    </div>
+

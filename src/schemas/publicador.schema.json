@@ -8,87 +8,108 @@
     "id": {
       "primary": true,
       "type": "string",
-      "default": ""
+      "default": "",
+      "description": "uuid"
     },
     "name": {
       "type": "string",
-      "default":  ""
+      "default":  "",
+      "description": "Nombre Publicador"
     },
     "presidentesabado": {
       "type": "boolean",
-      "default": false
+      "default": false,
+      "description": "Presidente Sabado"
     },
     "discurso1": {
       "type": "boolean",
-      "default": false
+      "default": false,
+      "description": "Discurso 1"
     },
     "lecturabiblia": {
       "type": "boolean",
-      "default": false
+      "default": false,
+      "description": "Lectura Biblia"
     },
     "oracion1": {
       "type": "boolean",
-      "default": false
+      "default": false,
+      "description": "Oracion1"
     },
     "oracion2": {
       "type": "boolean",
-      "default": false
+      "default": false,
+      "description": "Oracion2"
     },
     "ayudante": {
       "type": "boolean",
-      "default": false
+      "default": false,
+      "description": "Ayudante"
     },
     "primeraconversacion": {
       "type": "boolean",
-      "default": false
+      "default": false,
+      "description": "Primera conversacion"
     },
     "revisita": {
       "type": "boolean",
-      "default": false
+      "default": false,
+      "description": "Revisita"
     },
     "cursobiblico": {
       "type": "boolean",
-      "default": false
+      "default": false,
+      "description": "Curso Biblico"
     },
     "nvc1": {
       "type": "boolean",
-      "default": false
+      "default": false,
+      "description": "NVC 1"
     },
     "nvc2": {
       "type": "boolean",
-      "default": false
+      "default": false,
+      "description": "NVC 2"
     },
     "estudiocongregacion": {
       "type": "boolean",
-      "default": false
+      "default": false,
+      "description": "Estudio congregación"
     },
     "lectorestudiocongregacion": {
       "type": "boolean",
-      "default": false
+      "default": false,
+      "description": "Lector Estudio congregación"
     },
     "lectoreatalaya": {
       "type": "boolean",
-      "default": false
+      "default": false,
+      "description": "Lector Atalaya"
     },
     "camara": {
       "type": "boolean",
-      "default": false
+      "default": false,
+      "description": "Camara"
     },
     "aparatos": {
       "type": "boolean",
-      "default": false
+      "default": false,
+      "description": "Aparatos"
     },
     "cronometro": {
       "type": "boolean",
-      "default": false
+      "default": false,
+      "description": "Cronómetro"
     },
     "presidentedomingo": {
       "type": "boolean",
-      "default": false
+      "default": false,
+      "description": "Presidente Domingo"
     },
     "smmdiscurso": {
       "type": "boolean",
-      "default": false
+      "default": false,
+      "description": "Discurso Seamos mejores maestros"
     }
 
   },
