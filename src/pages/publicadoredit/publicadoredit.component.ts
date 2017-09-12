@@ -6,43 +6,41 @@ import { ProgramaDatabaseService } from '../../services/programadatabase.service
 declare var require: any;
 
 @Component({
-    templateUrl: './publicadoredit.component.html',
-    styles: ['./publicadoredit.component.less'],
+  templateUrl: './publicadoredit.component.html',
+  styles: ['./publicadoredit.component.less'],
 })
 export class PublicadorNewEditComponent {
-    character;
-    editedPublicador: RxDocument;
+  character;
+  editedPublicador: RxDocument;
 
-    ngOnInit() { }
+  ngOnInit() { }
 
-    // editPublicador(publicador) {
-    //     this.editedPublicador = publicador;
-    // }
+  // editPublicador(publicador) {
+  //     this.editedPublicador = publicador;
+  // }
 
-    @Input('publicador') publicador: any;
-    @Output('done') done = new EventEmitter();
+  @Input('publicador') publicador: any;
+  @Output('done') done = new EventEmitter();
 
-    constructor(private databaseService: ProgramaDatabaseService,
-        public platform: Platform, private params: NavParams,
+  constructor(private databaseService: ProgramaDatabaseService,
+    public platform: Platform, private params: NavParams,
 
-        public viewCtrl: ViewController
-    ) {
-         
-        this.publicador = params.get('publicador1')
-       
-    }
-    dismiss() {
-        this.viewCtrl.dismiss();
-    }
-    async submit() {
-        await this.publicador.save();
-        this.done.emit(true);
-        this.viewCtrl.dismiss();
-    }
+    public viewCtrl: ViewController
+  ) {
+    this.publicador = params.get('publicador1')
+  }
+  dismiss() {
+    this.viewCtrl.dismiss();
+  }
+  async submit() {
+    await this.publicador.save();
+    this.done.emit(true);
+    this.viewCtrl.dismiss();
+  }
 
-    async cancel() {
-        this.publicador.resync();
-        this.done.emit(false);
-        this.viewCtrl.dismiss();
-    }
+  async cancel() {
+    this.publicador.resync();
+    this.done.emit(false);
+    this.viewCtrl.dismiss();
+  }
 }

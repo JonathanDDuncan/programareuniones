@@ -1,48 +1,114 @@
-<ion-header>
-    <ion-toolbar>
-        <ion-title>
-            Description
-        </ion-title>
-        <ion-buttons start>
-            <button ion-button (click)="dismiss()">
-                  <span ion-text color="primary" showWhen="ios">Cancel</span>
-                  <ion-icon name="md-close" showWhen="android, windows"></ion-icon>
-                </button>
-        </ion-buttons>
-    </ion-toolbar>
-</ion-header>
-<ion-content>
-    <h3>Edit Publicador</h3>
-    Ion Content
-    <ion-list>
+<md-card *ngIf="publicador" class="publicador-edit-component">
+  <div style="overflow-y:scroll;height:400px">
+    <div style="height:auto">
+      <div class="alert" *ngIf="!(publicador.synced$ | async)">
+        <h4>Warning:</h4>
+        <p>Someone else has <b>changed</b> this document. If you click save, you will overwrite the changes.</p>
+        <button md-raised-button color="primary" (click)=publicador.resync()>resync</button>
+      </div>
+
+      <div class="alert deleted" *ngIf="(publicador.deleted$ | async)">
+        <h4>Error:</h4>
+        <p>Someone else has <b>deleted</b> this document. You can not save anymore.</p>
+      </div>
+
+      <md-card-title> {{ publicador.name }} </md-card-title>
+      <md-card-content>
+        <md-list>
+          <md-list-item> id: &nbsp;
+            <ion-label>{{ publicador.id }}</ion-label>
+          </md-list-item>
+
+          <md-list-item> Nombre Publicador
+            <ion-input type="text" [(ngModel)]="publicador.name" name="name"></ion-input>
+          </md-list-item>
 
 
-        <ion-item class="publicador-edit-component">
-            <md-card-subtitle>Edit</md-card-subtitle>
+          <md-list-item> Presidente Sabado
+            <ion-toggle [(ngModel)]="publicador.presidentesabado"> </ion-toggle>
+          </md-list-item>
 
-            <div class="alert" *ngIf="!(publicador.synced$ | async)">
-                <h4>Warning:</h4>
-                <p>Someone else has <b>changed</b> this document. If you click save, you will overwrite the changes.</p>
-                <button md-raised-button color="primary" (click)=publicador.resync()>resync</button>
-            </div>
+          <md-list-item> Discurso 1
+            <ion-toggle [(ngModel)]="publicador.discurso1"> </ion-toggle>
+          </md-list-item>
 
-            <div class="alert deleted" *ngIf="(publicador.deleted$ | async)">
-                <h4>Error:</h4>
-                <p>Someone else has <b>deleted</b> this document. You can not save anymore.</p>
-            </div>
+          <md-list-item> Lectura Biblia
+            <ion-toggle [(ngModel)]="publicador.lecturabiblia"> </ion-toggle>
+          </md-list-item>
 
-            <md-input-container>
-                Name: <input mdInput type="string" [ngModel]="publicador.name" name="name" />
-            </md-input-container>
+          <md-list-item> Oracion1
+            <ion-toggle [(ngModel)]="publicador.oracion1"> </ion-toggle>
+          </md-list-item>
 
-            <md-input-container>
-                Age: <input mdInput type="number" [(ngModel)]="publicador.age" name="age" />
-            </md-input-container>
-            <br />
-            <button md-raised-button color="primary" (click)="cancel()">cancel</button>
-            <button *ngIf="!(publicador.deleted$ | async)" md-raised-button color="primary" (click)=submit()>submit</button>
+          <md-list-item> Oracion2
+            <ion-toggle [(ngModel)]="publicador.oracion2"> </ion-toggle>
+          </md-list-item>
 
-        </ion-item>
-    </ion-list>
-</ion-content>
-`
+          <md-list-item> Ayudante
+            <ion-toggle [(ngModel)]="publicador.ayudante"> </ion-toggle>
+          </md-list-item>
+
+          <md-list-item> Primera conversacion
+            <ion-toggle [(ngModel)]="publicador.primeraconversacion"> </ion-toggle>
+          </md-list-item>
+
+          <md-list-item> Revisita
+            <ion-toggle [(ngModel)]="publicador.revisita"> </ion-toggle>
+          </md-list-item>
+
+          <md-list-item> Curso Biblico
+            <ion-toggle [(ngModel)]="publicador.cursobiblico"> </ion-toggle>
+          </md-list-item>
+
+          <md-list-item> NVC 1
+            <ion-toggle [(ngModel)]="publicador.nvc1"> </ion-toggle>
+          </md-list-item>
+
+          <md-list-item> NVC 2
+            <ion-toggle [(ngModel)]="publicador.nvc2"> </ion-toggle>
+          </md-list-item>
+
+          <md-list-item> Estudio congregación
+            <ion-toggle [(ngModel)]="publicador.estudiocongregacion"> </ion-toggle>
+          </md-list-item>
+
+          <md-list-item> Lector Estudio congregación
+            <ion-toggle [(ngModel)]="publicador.lectorestudiocongregacion"> </ion-toggle>
+          </md-list-item>
+
+          <md-list-item> Lector Atalaya
+            <ion-toggle [(ngModel)]="publicador.lectoreatalaya"> </ion-toggle>
+          </md-list-item>
+
+          <md-list-item> Camara
+            <ion-toggle [(ngModel)]="publicador.camara"> </ion-toggle>
+          </md-list-item>
+
+          <md-list-item> Aparatos
+            <ion-toggle [(ngModel)]="publicador.aparatos"> </ion-toggle>
+          </md-list-item>
+
+          <md-list-item> Cronómetro
+            <ion-toggle [(ngModel)]="publicador.cronometro"> </ion-toggle>
+          </md-list-item>
+
+          <md-list-item> Presidente Domingo
+            <ion-toggle [(ngModel)]="publicador.presidentedomingo"> </ion-toggle>
+          </md-list-item>
+
+          <md-list-item> Discurso Seamos mejores maestros
+            <ion-toggle [(ngModel)]="publicador.smmdiscurso"> </ion-toggle>
+          </md-list-item>
+
+
+        </md-list>
+      </md-card-content>
+    </div>
+  </div>
+  <md-card-actions>
+
+    <button ion-button  color="primary" (click)="cancel()">cancel</button>
+    <button ion-button *ngIf="!(publicador.deleted$ | async)"   color="primary" (click)=submit()>submit</button>
+
+  </md-card-actions>
+</md-card>

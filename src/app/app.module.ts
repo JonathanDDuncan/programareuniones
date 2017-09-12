@@ -28,6 +28,7 @@ import { WelcomePage } from '../pages/welcome/welcome';
 // import { RXDBSampleComponent } from '../pages/rxdbsample/rxdbsample.component';
 import { RXDBPublicadorSampleComponent } from '../pages/rxdbpublicadorsample/rxdbpublicadorsample.component';
 import {PublicadorNewEditComponent } from '../pages/publicadoredit/publicadoredit.component';
+import {PublicadorNewInsertComponent } from '../pages/publicadorinsert/publicadorinsert.component';
 import {ProgramaDatabaseService } from '../services/programadatabase.service';
 
 import {ValuesPipe} from '../components/pipes/pipes'
@@ -100,6 +101,7 @@ export function provideSettings(storage: Storage) {
     PublicadorEditComponent,
     PublicadoresListComponent,
     PublicadorNewEditComponent,
+    PublicadorNewInsertComponent,
     ValuesPipe
   ],
   imports: [
@@ -141,7 +143,8 @@ export function provideSettings(storage: Storage) {
     // RXDBSampleComponent,
     RXDBPublicadorSampleComponent,
     PublicadorEditComponent,
-    PublicadorNewEditComponent
+    PublicadorNewEditComponent,
+    PublicadorNewInsertComponent
   ],
   providers: [
     Api,

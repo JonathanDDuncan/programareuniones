@@ -1,6 +1,3 @@
-
-
-
 <div class="loading" *ngIf="!publicadores" class="publicador-list-component">
   <md-spinner class="app-spinner"></md-spinner>
 </div>
@@ -8,27 +5,102 @@
 
 
 
-    <div *ngIf="publicadores"  style="overflow-y:scroll;height:300px" >
+<div *ngIf="publicadores" style="overflow-y:scroll;height:300px">
 
-      <md-list style="height:auto" >
-        <md-card *ngFor="let publicador of publicadores">
-          <md-card-title> <button ion-button (click)="editPublicador(publicador)"> {{publicador.name}}</button></md-card-title>
-          <md-card-content>
-            <md-list>
-              <md-list-item>Item 1
-                <ion-toggle disabled checked="{{ publicador.camara }}"> </ion-toggle>
-              </md-list-item>
-              <md-list-item>Item 2
-                <ion-toggle disabled checked="{{ publicador.camara }}"> </ion-toggle>
-              </md-list-item>
-              <md-list-item>Item 3
-                <ion-toggle disabled checked="{{ publicador.camara }}"> </ion-toggle>
-              </md-list-item>
-            </md-list>
-          </md-card-content>
-          <md-card-actions> <i class="fa fa-trash-o" aria-hidden="true" (click)="deletePublicador(publicador)">Delete</i> Edit</md-card-actions>
-        </md-card>
-      </md-list>
+  <md-list style="height:auto">
+    <md-card *ngFor="let publicador of publicadores">
 
-    </div>
+      <md-card-title> <button ion-button (click)="editPublicador(publicador)"> {{ publicador.name }}</button></md-card-title>
+      <md-card-content>
+        <md-list>
+          <md-list-item> id: &nbsp;
+            <ion-label  >{{ publicador.id }}</ion-label>
+          </md-list-item>
 
+          <md-list-item> Nombre Publicador: &nbsp;
+            <ion-label  >{{publicador.name}}</ion-label>
+          </md-list-item>
+
+          <md-list-item> Presidente Sabado
+            <ion-toggle disabled checked="{{ publicador.presidentesabado }}"> </ion-toggle>
+          </md-list-item>
+
+          <md-list-item> Discurso 1
+            <ion-toggle disabled checked="{{ publicador.discurso1 }}"> </ion-toggle>
+          </md-list-item>
+
+          <md-list-item> Lectura Biblia
+            <ion-toggle disabled checked="{{ publicador.lecturabiblia }}"> </ion-toggle>
+          </md-list-item>
+
+          <md-list-item> Oracion1
+            <ion-toggle disabled checked="{{ publicador.oracion1 }}"> </ion-toggle>
+          </md-list-item>
+
+          <md-list-item> Oracion2
+            <ion-toggle disabled checked="{{ publicador.oracion2 }}"> </ion-toggle>
+          </md-list-item>
+
+          <md-list-item> Ayudante
+            <ion-toggle disabled checked="{{ publicador.ayudante }}"> </ion-toggle>
+          </md-list-item>
+
+          <md-list-item> Primera conversacion
+            <ion-toggle disabled checked="{{ publicador.primeraconversacion }}"> </ion-toggle>
+          </md-list-item>
+
+          <md-list-item> Revisita
+            <ion-toggle disabled checked="{{ publicador.revisita }}"> </ion-toggle>
+          </md-list-item>
+
+          <md-list-item> Curso Biblico
+            <ion-toggle disabled checked="{{ publicador.cursobiblico }}"> </ion-toggle>
+          </md-list-item>
+
+          <md-list-item> NVC 1
+            <ion-toggle disabled checked="{{ publicador.nvc1 }}"> </ion-toggle>
+          </md-list-item>
+
+          <md-list-item> NVC 2
+            <ion-toggle disabled checked="{{ publicador.nvc2 }}"> </ion-toggle>
+          </md-list-item>
+
+          <md-list-item> Estudio congregación
+            <ion-toggle disabled checked="{{ publicador.estudiocongregacion }}"> </ion-toggle>
+          </md-list-item>
+
+          <md-list-item> Lector Estudio congregación
+            <ion-toggle disabled checked="{{ publicador.lectorestudiocongregacion }}"> </ion-toggle>
+          </md-list-item>
+
+          <md-list-item> Lector Atalaya
+            <ion-toggle disabled checked="{{ publicador.lectoreatalaya }}"> </ion-toggle>
+          </md-list-item>
+
+          <md-list-item> Camara
+            <ion-toggle disabled checked="{{ publicador.camara }}"> </ion-toggle>
+          </md-list-item>
+
+          <md-list-item> Aparatos
+            <ion-toggle disabled checked="{{ publicador.aparatos }}"> </ion-toggle>
+          </md-list-item>
+
+          <md-list-item> Cronómetro
+            <ion-toggle disabled checked="{{ publicador.cronometro }}"> </ion-toggle>
+          </md-list-item>
+
+          <md-list-item> Presidente Domingo
+            <ion-toggle disabled checked="{{ publicador.presidentedomingo }}"> </ion-toggle>
+          </md-list-item>
+
+          <md-list-item> Discurso Seamos mejores maestros
+            <ion-toggle disabled checked="{{ publicador.smmdiscurso }}"> </ion-toggle>
+          </md-list-item>
+
+        </md-list>
+      </md-card-content>
+      <md-card-actions> <i class="fa fa-trash-o" aria-hidden="true" (click)="deletePublicador(publicador)">Delete</i> Edit</md-card-actions>
+     </md-card>
+  </md-list>
+
+</div>

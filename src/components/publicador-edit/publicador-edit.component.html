@@ -1,23 +1,134 @@
 <md-card *ngIf="publicador" class="publicador-edit-component">
-    <md-card-subtitle>Edit</md-card-subtitle>
 
-    <div class="alert" *ngIf="!(publicador.synced$ | async)">
-        <h4>Warning:</h4>
-        <p>Someone else has <b>changed</b> this document. If you click save, you will overwrite the changes.</p>
-        <button md-raised-button color="primary" (click)=publicador.resync()>resync</button>
-    </div>
 
-    <div class="alert deleted" *ngIf="(publicador.deleted$ | async)">
-        <h4>Error:</h4>
-        <p>Someone else has <b>deleted</b> this document. You can not save anymore.</p>
-    </div>
+  <div class="alert" *ngIf="!(publicador.synced$ | async)">
+    <h4>Warning:</h4>
+    <p>Someone else has <b>changed</b> this document. If you click save, you will overwrite the changes.</p>
+    <button md-raised-button color="primary" (click)=publicador.resync()>resync</button>
+  </div>
 
-    <md-input-container>
-        Name: <input mdInput type="string" [(ngModel)]="publicador.name"   name="name" />
-    </md-input-container>
+  <div class="alert deleted" *ngIf="(publicador.deleted$ | async)">
+    <h4>Error:</h4>
+    <p>Someone else has <b>deleted</b> this document. You can not save anymore.</p>
+  </div>
 
-    <br />
+  <md-card-title> {{ publicador.name }} </md-card-title>
+  <md-card-content>
+    <md-list>
+      <md-list-item> uuid
+        <ion-toggle checked="{{( publicador.id) }}"> </ion-toggle>
+      </md-list-item>
+
+      <md-list-item> Nombre Publicador
+        <ion-toggle checked="{{( publicador.name) }}"> </ion-toggle>
+      </md-list-item>
+
+      <md-list-item> Presidente Sabado
+        <ion-toggle checked="{{( publicador.presidentesabado) }}"> </ion-toggle>
+      </md-list-item>
+
+      <md-list-item> Discurso 1
+        <ion-toggle checked="{{( publicador.discurso1) }}"> </ion-toggle>
+      </md-list-item>
+
+      <md-list-item> Lectura Biblia
+        <ion-toggle checked="{{( publicador.lecturabiblia) }}"> </ion-toggle>
+      </md-list-item>
+
+      <md-list-item> Oracion1
+        <ion-toggle checked="{{( publicador.oracion1) }}"> </ion-toggle>
+      </md-list-item>
+
+      <md-list-item> Oracion2
+        <ion-toggle checked="{{( publicador.oracion2) }}"> </ion-toggle>
+      </md-list-item>
+
+      <md-list-item> Ayudante
+        <ion-toggle checked="{{( publicador.ayudante) }}"> </ion-toggle>
+      </md-list-item>
+
+      <md-list-item> Primera conversacion
+        <ion-toggle checked="{{( publicador.primeraconversacion) }}"> </ion-toggle>
+      </md-list-item>
+
+      <md-list-item> Revisita
+        <ion-toggle checked="{{( publicador.revisita) }}"> </ion-toggle>
+      </md-list-item>
+
+      <md-list-item> Curso Biblico
+        <ion-toggle checked="{{( publicador.cursobiblico) }}"> </ion-toggle>
+      </md-list-item>
+
+      <md-list-item> NVC 1
+        <ion-toggle checked="{{( publicador.nvc1) }}"> </ion-toggle>
+      </md-list-item>
+
+      <md-list-item> NVC 2
+        <ion-toggle checked="{{( publicador.nvc2) }}"> </ion-toggle>
+      </md-list-item>
+
+      <md-list-item> Estudio congregación
+        <ion-toggle checked="{{( publicador.estudiocongregacion) }}"> </ion-toggle>
+      </md-list-item>
+
+      <md-list-item> Lector Estudio congregación
+        <ion-toggle checked="{{( publicador.lectorestudiocongregacion) }}"> </ion-toggle>
+      </md-list-item>
+
+      <md-list-item> Lector Atalaya
+        <ion-toggle checked="{{( publicador.lectoreatalaya) }}"> </ion-toggle>
+      </md-list-item>
+
+      <md-list-item> Camara
+        <ion-toggle checked="{{( publicador.camara) }}"> </ion-toggle>
+      </md-list-item>
+
+      <md-list-item> Aparatos
+        <ion-toggle checked="{{( publicador.aparatos) }}"> </ion-toggle>
+      </md-list-item>
+
+      <md-list-item> Cronómetro
+        <ion-toggle checked="{{( publicador.cronometro) }}"> </ion-toggle>
+      </md-list-item>
+
+      <md-list-item> Presidente Domingo
+        <ion-toggle checked="{{( publicador.presidentedomingo) }}"> </ion-toggle>
+      </md-list-item>
+
+      <md-list-item> Discurso Seamos mejores maestros
+        <ion-toggle checked="{{( publicador.smmdiscurso) }}"> </ion-toggle>
+      </md-list-item>
+
+    </md-list>
+  </md-card-content>
+
+  <md-card-actions>
+
     <button md-raised-button color="primary" (click)="cancel()">cancel</button>
     <button *ngIf="!(publicador.deleted$ | async)" md-raised-button color="primary" (click)=submit()>submit</button>
 
+  </md-card-actions>
+
+
+
 </md-card>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<md-input-container>
+  Name: <input mdInput type="string" [(ngModel)]="publicador.name" name="name" />
+</md-input-container>
+
+<br />
