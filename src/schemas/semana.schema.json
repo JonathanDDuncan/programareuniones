@@ -1,0 +1,245 @@
+{
+  "title": "semana schema",
+  "description": "describes a simple semana",
+  "version": 0,
+  "disableKeyCompression": true,
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "primary": true,
+      "default": ""
+    },
+    "creado": {
+      "type": "number",
+      "default": 0,
+      "description": "Fecha Creado"
+    },
+    "modificado": {
+      "type": "number",
+      "default": 0,
+      "description": "Fecha Modificado"
+    },
+    "sabasamblea": {
+      "type": "boolean",
+      "default": false,
+      "description": "Asamblea Sabado"
+    },
+    "sabasambleamensage": {
+      "type": "string",
+      "default": null,
+      "description": "Asamblea Sabado Mensaje"
+    },
+    "fecha": {
+      "type": "number",
+      "default": null,
+      "description": "Fecha principio de la semana"
+    },
+    "presidente": {
+      "type": "string",
+      "default": null,
+      "description": "Presidente sabado"
+    },
+    "cancion1": {
+      "type": "string",
+      "default": null,
+      "description": "Cancion1"
+    },
+    "oracion1": {
+      "type": "string",
+      "default": null,
+      "description": "Oracion1"
+    },
+    "tb1titulo": {
+      "type": "string",
+      "default": null,
+      "description": "Discurso1 Titulo"
+    },
+    "tb1orador": {
+      "type": "string",
+      "default": null,
+      "description": "Orador 10 min"
+    },
+    "tbperlasorador": {
+      "type": "string",
+      "default": null,
+      "description": "Oradar Perlas"
+    },
+    "consejolector": {
+      "type": "number",
+      "default": null,
+      "description": "Consejo para el lector"
+    },
+    "tblector": {
+      "type": "string",
+      "default": null,
+      "description": "Lector Biblia"
+    },
+    "hayestudiantes": {
+      "type": "string",
+      "default": true,
+      "description": "Hay Estudiantes"
+    },
+    "consejoprimera": {
+      "type": "number",
+      "default": null,
+      "description": "Consejo Primera"
+    },
+    "smmprimeraes": {
+      "type": "string",
+      "default": null,
+      "description": "smmprimeraes"
+    },
+    "smmprimeraayu": {
+      "type": "string",
+      "default": null,
+      "description": "smmprimeraayu"
+    },
+    "consejorevisita": {
+      "type": "number",
+      "default": null,
+      "description": "consejorevisita"
+    },
+    "smmrevisitaes": {
+      "type": "string",
+      "default": null,
+      "description": "smmrevisitaes"
+    },
+    "smmrevisitaayu": {
+      "type": "string",
+      "default": null,
+      "description": "smmrevisitaayu"
+    },
+    "escurso": {
+      "type": "boolean",
+      "default": false,
+      "description": "escurso"
+    },
+    "consejocb": {
+      "type": "number",
+      "default": null,
+      "description": "Lector Biblia"
+    },
+    "smmcbes": {
+      "type": "string",
+      "default": null,
+      "description": "smmcbes"
+    },
+    "smmcbayu": {
+      "type": "string",
+      "default": null,
+      "description": "smmcbayu"
+    },
+    "presentacionesmes": {
+      "type": "string",
+      "default": null,
+      "description": "presentacionesmes"
+    },
+    "cancion2": {
+      "type": "string",
+      "default": null,
+      "description": "Cancion 2"
+    },
+    "nvctitulo1": {
+      "type": "string",
+      "default": null,
+      "description": "Titulo 1"
+    },
+    "nvcmins1": {
+      "type": "string",
+      "default": null,
+      "description": "nvcmins1"
+    },
+    "nvcorador1": {
+      "type": "string",
+      "default": null,
+      "description": "Orador 1"
+    },
+    "nvctitulo2": {
+      "type": "string",
+      "default": null,
+      "description": "Titulo 2"
+    },
+    "nvcmins2": {
+      "type": "string",
+      "default": null,
+      "description": "nvcmins2"
+    },
+    "nvcorador2": {
+      "type": "string",
+      "default": null,
+      "description": "Orador 2"
+    },
+    "nvcestudioorador": {
+      "type": "string",
+      "default": null,
+      "description": "Estudio Libro conductor"
+    },
+    "nvcestudiolector": {
+      "type": "string",
+      "default": null,
+      "description": "nvcestudiolector"
+    },
+    "cancion3": {
+      "type": "string",
+      "default": null,
+      "description": "Cancion 3"
+    },
+    "oracion2": {
+      "type": "string",
+      "default": null,
+      "description": "Oracion 2"
+    },
+    "camara": {
+      "type": "string",
+      "default": null,
+      "description": "camara"
+    },
+    "aparatos": {
+      "type": "string",
+      "default": null,
+      "description": "aparatos"
+    },
+    "cronometro": {
+      "type": "string",
+      "default": null,
+      "description": "cronometro"
+    },
+    "domasamblea": {
+      "type": "boolean",
+      "default": false,
+      "description": "camara"
+    },
+    "domasambleamensage": {
+      "type": "string",
+      "default": "Hay asamblea",
+      "description": "Hay asamblea"
+    },
+    "domfecha": {
+      "type": "string",
+      "default": null,
+      "description": "Domingo fecha"
+    },
+    "dompresidente": {
+      "type": "string",
+      "default": null,
+      "description": "Presidente"
+    },
+    "domdiscursante": {
+      "type": "string",
+      "default": null,
+      "description": "Discursante"
+    },
+    "domhaydiscursante": {
+      "type": "boolean",
+      "default": false,
+      "description": "Hay Discursante"
+    },
+    "domlectura": {
+      "type": "string",
+      "default": null,
+      "description": "Lector Atalaya"
+    }
+  },
+  "required": []
+}
