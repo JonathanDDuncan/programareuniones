@@ -4,7 +4,7 @@ import { ProgramaDatabaseService } from '../../services/programadatabase.service
 import { PublicadorNewEditComponent } from '../../pages/publicadoredit/publicadoredit.component';
 
 
-import { Platform, ViewController,ActionSheetController } from 'ionic-angular';
+import { Platform, ViewController, ActionSheetController } from 'ionic-angular';
 import * as RxDBTypes from '../../schemas/RxProgramaDB.d';
 declare var require: any;
 @Component({
@@ -32,7 +32,9 @@ export class PublicadoresListComponent implements OnInit, OnDestroy {
     modal.present();
   }
   deletePublicador(publicador) {
-    publicador.remove();
+    if (confirm("Esta seguro quiere borrar publicador " + publicador.name + "?")) {
+      publicador.remove();
+    }
   }
 
   openModal(characterNum) {
