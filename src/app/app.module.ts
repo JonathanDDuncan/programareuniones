@@ -25,11 +25,11 @@ import { SignupPage } from '../pages/signup/signup';
 import { TabsPage } from '../pages/tabs/tabs';
 import { TutorialPage } from '../pages/tutorial/tutorial';
 import { WelcomePage } from '../pages/welcome/welcome';
-// import { RXDBSampleComponent } from '../pages/rxdbsample/rxdbsample.component';
 import { RXDBPublicadorSampleComponent } from '../pages/rxdbpublicadorsample/rxdbpublicadorsample.component';
 import { RXDBConsejoComponent } from '../pages/rxdbconsejo/rxdbconsejo.component';
 import {PublicadorNewEditComponent } from '../pages/publicadoredit/publicadoredit.component';
 import {PublicadorNewInsertComponent } from '../pages/publicadorinsert/publicadorinsert.component';
+import {ConsejoInsertComponent } from '../pages/consejoinsert/consejoinsert.component';
 import {ProgramaDatabaseService } from '../services/programadatabase.service';
 
 import {ValuesPipe} from '../components/pipes/pipes'
@@ -95,6 +95,7 @@ export function provideSettings(storage: Storage) {
     PublicadorNewInsertComponent,
     RXDBConsejoComponent,
     ConsejosListComponent,
+    ConsejoInsertComponent,
     ValuesPipe
   ],
   imports: [
@@ -137,8 +138,8 @@ export function provideSettings(storage: Storage) {
     PublicadorNewEditComponent,
     PublicadorNewInsertComponent,
     RXDBConsejoComponent,
-    // ConsejoNewEditComponent,
-    // ConsejoNewInsertComponent
+    // ConsejoEditComponent,
+    ConsejoInsertComponent
   ],
   providers: [
     Api,

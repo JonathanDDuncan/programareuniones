@@ -10,6 +10,16 @@
       "primary": true,
       "default": ""
     },
+    "creado": {
+      "type": "number",
+      "default": 0,
+      "description": "Fecha Creado"
+    },
+    "modificado": {
+      "type": "number",
+      "default": 0,
+      "description": "Fecha Modificado"
+    },
     "publicadorid": {
       "type": "string",
       "default": ""

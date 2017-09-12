@@ -1,7 +1,7 @@
 import { ModalController, NavParams } from 'ionic-angular';
 import { Component, OnInit, OnDestroy, NgZone, Output, EventEmitter } from '@angular/core';
 import { ProgramaDatabaseService } from '../../services/programadatabase.service';
-// import { consejoNewEditComponent } from '../../pages/consejoedit/consejoedit.component';
+// import { ConsejoEditComponent } from '../../pages/consejoedit/consejoedit.component';
 
 
 import { Platform, ViewController, ActionSheetController } from 'ionic-angular';
@@ -28,7 +28,7 @@ export class ConsejosListComponent implements OnInit, OnDestroy {
   editconsejo(consejo) {
     // this.edit = consejo;
 
-    // let modal = this.modalCtrl.create(ConsejoNewEditComponent, { consejo1: consejo });
+    // let modal = this.modalCtrl.create(ConsejoEditComponent, { consejo1: consejo });
     // modal.present();
   }
   deleteconsejo(consejo) {
@@ -39,7 +39,7 @@ export class ConsejosListComponent implements OnInit, OnDestroy {
 
   openModal(characterNum) {
 
-    // let modal = this.modalCtrl.create(ConsejoNewEditComponent, characterNum);
+    // let modal = this.modalCtrl.create(ConsejoEditComponent, characterNum);
     // modal.present();
   }
   constructor(

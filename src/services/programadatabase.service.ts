@@ -114,7 +114,7 @@ export class ProgramaDatabaseService {
 
   public getDate() {
     var d = new Date();
-    var date =  d.getTime();
+    var date = d.getTime();
     return date;
   };
 
@@ -145,6 +145,18 @@ export class ProgramaDatabaseService {
       smmdiscurso: false,
     }
   };
+
+  public defaultConsejo(id: string) {
+    return {
+      id: id,
+      creado: this.getDate(),
+      modificado: this.getDate(),
+      publicadorid: "",
+      leccion: 0,
+      fechaasignado: 0,
+      proximo: 0,
+    }
+  }
 
   get(): Promise<RxDBTypes.RxProgramasDatabase> {
     if (ProgramaDatabaseService.dbPromise)

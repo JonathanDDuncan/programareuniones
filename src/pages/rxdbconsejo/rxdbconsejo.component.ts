@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 // import RxDocument from 'rxjs';
 import { RxDocument } from "rxdb";
-import { PublicadorNewInsertComponent } from '../../pages/publicadorinsert/publicadorinsert.component';
+import { ConsejoInsertComponent } from '../../pages/consejoinsert/consejoinsert.component';
 import { ModalController, NavParams } from 'ionic-angular';
 
 declare var require: any;
@@ -21,8 +21,8 @@ export class RXDBConsejoComponent {
     this.editedHero = hero;
   }
 
-  insertPublicador() {
-    let modal = this.modalCtrl.create(PublicadorNewInsertComponent);
+  insertConsejo() {
+    let modal = this.modalCtrl.create(ConsejoInsertComponent);
     modal.present();
   }
 }
