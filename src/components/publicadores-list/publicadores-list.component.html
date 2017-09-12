@@ -8,9 +8,9 @@
 
 
 
-    <div *ngIf="publicadores" >
+    <div *ngIf="publicadores"  style="overflow-y:scroll;height:300px" >
 
-      <md-list style="overflow-y:scroll;height:600px" >
+      <md-list style="height:auto" >
         <md-card *ngFor="let publicador of publicadores">
           <md-card-title> <button ion-button (click)="editPublicador(publicador)"> {{publicador.name}}</button></md-card-title>
           <md-card-content>
