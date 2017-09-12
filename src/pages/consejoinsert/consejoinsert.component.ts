@@ -2,6 +2,8 @@ import { ModalController, NavParams, Platform, ViewController } from 'ionic-angu
 import { Component, ViewChild, ViewChildren, Input, OnChanges, Output, EventEmitter, OnInit } from '@angular/core';
 // import RxDocument from 'rxjs';
 import { RxDocument } from "rxdb";
+import * as RxDBTypes from '../../schemas/RxProgramaDB.d';
+
 import { ProgramaDatabaseService } from '../../services/programadatabase.service';
 import * as uuid from 'uuid/v4';
 
@@ -14,8 +16,18 @@ declare var require: any;
 })
 export class ConsejoInsertComponent {
 
-  tempDoc: any;
+  search(nameKey, myArray){
+    for (var i=0; i < myArray.length; i++) {
+        if (myArray[i].id === nameKey) {
+            return myArray[i];
+        }
+    }
+}
 
+  tempDoc: any;
+  puntosconsejo: [{num:number, nombre:string}];
+  publicadores: RxDBTypes.RxPublicadorDocument[] | RxDBTypes.RxPublicadorDocument;
+  sub;
   constructor(
     private databaseService: ProgramaDatabaseService,
     public viewCtrl: ViewController
@@ -27,18 +39,37 @@ export class ConsejoInsertComponent {
   async reset() {
     const db = await this.databaseService.get();
     this.tempDoc = db.consejos.newDocument(this.databaseService.defaultConsejo(uuid()));
+
+
+    const publicadores$ = db.publicadores
+      .find()
+      .sort({ id: 1 })
+      .$;
+    this.sub = publicadores$.subscribe(publicadores => {
+      this.publicadores = publicadores;
+    });
+
+    this.puntosconsejo = require('../../json/puntosconsejo.json');
+
   }
   async cancel() {
     this.tempDoc.resync();
     this.done.emit(false);
     this.viewCtrl.dismiss();
   }
+  async BorrarFecha() {
+    this.tempDoc.fechaasignado = null;
+  }
   async submit() {
     console.log('ConsejoInsertComponent.submit():');
-    // console.log('name: ' + this.tempDoc.name);
-    // console.log('age: ' + this.tempDoc.age);
+
     console.log('tempDoc: ' + JSON.stringify(this.tempDoc));
     try {
+      debugger;
+      this.tempDoc.leccion = parseInt( this.tempDoc.leccion);
+      let publicador = this.search( this.tempDoc.publicadorid, this.publicadores)
+      if (publicador)
+        this.tempDoc.nombre = publicador.name;
 
       await this.tempDoc.save();
       await this.reset();
@@ -54,9 +85,9 @@ export class ConsejoInsertComponent {
 
   }
 
-  displayDate(date:number ){
+  displayDate(date: number) {
     var d = new Date(date);
-   return d.toLocaleString();
+    return d.toLocaleString();
   }
 
 }

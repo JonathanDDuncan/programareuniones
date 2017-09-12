@@ -12,7 +12,7 @@
         <p>Someone else has <b>deleted</b> this document. You can not save anymore.</p>
       </div>
 
-      <md-card-title> {{ tempDoc.name }} </md-card-title>
+      <md-card-title> Consejo </md-card-title>
       <md-card-content>
         <md-list>
           <md-list-item> id: &nbsp;
@@ -34,24 +34,38 @@
               </ion-item>
             </md-list-item> -->
 
-          <md-list-item> Publicador
-            <ion-toggle [(ngModel)]="tempDoc.publicadorid"> </ion-toggle>
+          <md-list-item>
+            <ion-label>Publicador</ion-label>
+            <ion-select [(ngModel)]="tempDoc.publicadorid" submitText="Ok" cancelText="Cancel">
+              <ion-option value="{{publicador.id}}" *ngFor="let publicador of publicadores">{{publicador.name}}</ion-option>
+            </ion-select>
           </md-list-item>
 
-          <md-list-item> Leccion
-            <ion-toggle [(ngModel)]="tempDoc.leccion"> </ion-toggle>
+          <md-list-item>
+            <ion-label>Leccion</ion-label>
+            <ion-select [(ngModel)]="tempDoc.leccion" submitText="Ok" cancelText="Cancel">
+              <ion-option value="{{punto.num}}" *ngFor="let punto of puntosconsejo">{{punto.num}} - {{punto.nombre}}</ion-option>
+            </ion-select>
           </md-list-item>
 
           <md-list-item> Fecha Asignado
-            <ion-toggle [(ngModel)]="tempDoc.fechaasignado"> </ion-toggle>
+            <ion-datetime displayFormat="MM/DD/YYYY" pickerFormat="MMMM D YYYY" min="2017" max="2020-10-31" placeholder="Escoger fecha"
+              [(ngModel)]="tempDoc.fechaasignado"></ion-datetime>
           </md-list-item>
 
-          <md-list-item> Proximo
-            <ion-toggle [(ngModel)]="tempDoc.proximo"> </ion-toggle>
+          <md-list-item>
+            <button ion-button color="primary" (click)="BorrarFecha()">Borrar Fecha</button>
           </md-list-item>
 
-
+          <md-list-item> Proxima
+            <ion-toggle [(ngModel)]="tempDoc.proxima"> </ion-toggle>
+          </md-list-item>
         </md-list>
+
+        <md-list-item> Terminado
+          <ion-toggle [(ngModel)]="tempDoc.terminado"> </ion-toggle>
+        </md-list-item>
+
       </md-card-content>
     </div>
   </div>

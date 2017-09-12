@@ -10,12 +10,10 @@
       <md-card-title> <button ion-button (click)="editconsejo(consejo)"> {{ consejo.name }}</button></md-card-title>
       <md-card-content>
         <md-list>
+
           <md-list-item> id: &nbsp;
             <ion-label>{{ consejo.id }}</ion-label>
           </md-list-item>
-          <md-list-item> publicadorid: &nbsp;
-              <ion-label>{{ consejo.publicadorid }}</ion-label>
-            </md-list-item>
 
           <md-list-item> creado: &nbsp;
             <ion-label>{{ displayDate(consejo.creado) }}</ion-label>
@@ -25,7 +23,30 @@
             <ion-label>{{ displayDate(consejo.modificado) }}</ion-label>
           </md-list-item>
 
-        
+          <md-list-item> publicadorid: &nbsp;
+            <ion-label>{{ consejo.publicadorid }}</ion-label>
+          </md-list-item>
+
+          <md-list-item> Nombre: &nbsp;
+            <ion-label>{{ consejo.nombre }}</ion-label>
+          </md-list-item>
+
+          <md-list-item> Leccion: &nbsp;
+            <ion-label>{{ consejo.leccion }}</ion-label>
+          </md-list-item>
+
+          <md-list-item> Fecha Asignado
+            <ion-datetime disabled displayFormat="MM/DD/YYYY" [(ngModel)]="consejo.fechaasignado"></ion-datetime>
+          </md-list-item>
+
+          <md-list-item> Proxima
+            <ion-toggle disabled [(ngModel)]="consejo.proxima"> </ion-toggle>
+          </md-list-item>
+
+          <md-list-item> Terminado
+            <ion-toggle disabled [(ngModel)]="consejo.terminado"> </ion-toggle>
+          </md-list-item>
+
         </md-list>
       </md-card-content>
       <md-card-actions> <i class="fa fa-trash-o" aria-hidden="true" (click)="deleteconsejo(consejo)">Delete</i> Edit</md-card-actions>

@@ -18,9 +18,12 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { TutorialPage } from '../pages/tutorial/tutorial';
 import { WelcomePage } from '../pages/welcome/welcome';
 
+
 import { Settings } from '../providers/providers';
 
 import { TranslateService } from '@ngx-translate/core'
+import { RXDBConsejoComponent } from '../pages/rxdbconsejo/rxdbconsejo.component';
+import { RXDBPublicadorSampleComponent } from './../pages/rxdbpublicadorsample/rxdbpublicadorsample.component';
 
 @Component({
   template: `<ion-menu [content]="content">
@@ -59,6 +62,8 @@ export class MyApp {
     { title: 'Menu', component: MenuPage },
     { title: 'Settings', component: SettingsPage },
     { title: 'Search', component: SearchPage },
+    { title: 'Publicadores', component: RXDBPublicadorSampleComponent  },
+    { title: 'Consejos', component: RXDBConsejoComponent  },
 
 
   ]

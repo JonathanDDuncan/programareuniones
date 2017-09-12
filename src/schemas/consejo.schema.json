@@ -24,6 +24,10 @@
       "type": "string",
       "default": ""
     },
+    "publicadornombre": {
+      "type": "string",
+      "default": ""
+    },
     "leccion": {
       "type": "number",
       "default": 0
@@ -35,7 +39,11 @@
     "proximo": {
       "type": "number",
       "default": 0
+    },
+    "terminado": {
+      "type": "number",
+      "default": 0
     }
   },
-  "required": ["publicadorid","consejo"]
+  "required": ["publicadorid","leccion"]
 }
