@@ -1,4 +1,4 @@
-<md-card *ngIf="publicador" class="publicador-edit-component">
+<ion-card *ngIf="publicador" class="publicador-edit-component">
   <div style="overflow-y:scroll;height:400px">
     <div style="height:auto">
       <div class="alert" *ngIf="!(publicador.synced$ | async)">
@@ -121,4 +121,4 @@
     <button ion-button *ngIf="!(publicador.deleted$ | async)" color="primary" (click)=submit()>submit</button>
 
   </div>
-</md-card>
+</ion-card>

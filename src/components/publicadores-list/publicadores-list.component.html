@@ -8,7 +8,7 @@
 <div *ngIf="publicadores" style="overflow-y:scroll;height:300px">
 
   <ion-list style="height:auto">
-    <md-card *ngFor="let publicador of publicadores">
+    <ion-card *ngFor="let publicador of publicadores">
 
       <ion-card-header> <button ion-button (click)="editPublicador(publicador)"> {{ publicador.name }}</button></ion-card-header>
       <ion-card-content>
@@ -106,9 +106,10 @@
           </div>
 
         </ion-list>
+        <div class = "actions"> <i class="fa fa-trash-o" aria-hidden="true" (click)="deletePublicador(publicador)">Delete</i> Edit</div>
       </ion-card-content>
-      <div class = "actions"> <i class="fa fa-trash-o" aria-hidden="true" (click)="deletePublicador(publicador)">Delete</i> Edit</div>
-    </md-card>
+     
+    </ion-card>
   </ion-list>
 
 </div>

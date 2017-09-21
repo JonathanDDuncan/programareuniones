@@ -1,4 +1,4 @@
-<md-card *ngIf="tempDoc" class="publicador-insert-component">
+<ion-card *ngIf="tempDoc" class="publicador-insert-component">
   <div style="overflow-y:scroll;height:400px">
     <div style="height:auto">
       <div class="alert" *ngIf="!(tempDoc.synced$ | async)">
@@ -122,4 +122,4 @@
     <button *ngIf="!(tempDoc.deleted$ | async)" ion-button color="primary" (click)=submit()>insert</button>
 
   </div>
-</md-card>
+</ion-card>

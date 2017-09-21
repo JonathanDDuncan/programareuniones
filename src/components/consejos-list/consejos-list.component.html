@@ -5,7 +5,7 @@
 <div *ngIf="consejos" style="overflow-y:scroll;height:300px">
 
   <ion-list style="height:auto">
-    <md-card *ngFor="let consejo of consejos">
+    <ion-card *ngFor="let consejo of consejos">
 
       <ion-card-header> <button ion-button (click)="editconsejo(consejo)"> {{ consejo.name }}</button></ion-card-header>
       <ion-card-content>
@@ -48,9 +48,10 @@
           </div>
 
         </ion-list>
+        <div class = "actions"> <i class="fa fa-trash-o" aria-hidden="true" (click)="deleteconsejo(consejo)">Delete</i> Edit</div>
       </ion-card-content>
-      <div class = "actions"> <i class="fa fa-trash-o" aria-hidden="true" (click)="deleteconsejo(consejo)">Delete</i> Edit</div>
-    </md-card>
+     
+    </ion-card>
   </ion-list>
 
 </div>
