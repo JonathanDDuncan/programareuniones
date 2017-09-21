@@ -14,104 +14,104 @@
 
       <ion-card-header> {{ publicador.name }} </ion-card-header>
       <ion-card-content>
-        <md-list>
-          <md-list-item> id: &nbsp;
+        <ion-list>
+          <div> id: &nbsp;
             <ion-label>{{ publicador.id }}</ion-label>
-          </md-list-item>
+          </div>
 
-          <md-list-item> creado: &nbsp;
+          <div> creado: &nbsp;
             <ion-label>{{ displayDate(publicador.creado) }}</ion-label>
-          </md-list-item>
+          </div>
 
-          <md-list-item> modificado: &nbsp;
+          <div> modificado: &nbsp;
             <ion-label>{{ displayDate(publicador.modificado) }}</ion-label>
-          </md-list-item>
+          </div>
 
-          <md-list-item>
-            <ion-item>
+          <div>
+            <div>
               <ion-label floating>Nombre Publicador</ion-label>
               <ion-input type="text" [(ngModel)]="publicador.name" name="name"></ion-input>
-            </ion-item>
-          </md-list-item>
+            </div>
+          </div>
 
-          <md-list-item> Presidente Sabado
+          <div> Presidente Sabado
             <ion-toggle [(ngModel)]="publicador.presidentesabado"> </ion-toggle>
-          </md-list-item>
+          </div>
 
-          <md-list-item> Discurso 1
+          <div> Discurso 1
             <ion-toggle [(ngModel)]="publicador.discurso1"> </ion-toggle>
-          </md-list-item>
+          </div>
 
-          <md-list-item> Lectura Biblia
+          <div> Lectura Biblia
             <ion-toggle [(ngModel)]="publicador.lecturabiblia"> </ion-toggle>
-          </md-list-item>
+          </div>
 
-          <md-list-item> Oracion1
+          <div> Oracion1
             <ion-toggle [(ngModel)]="publicador.oracion1"> </ion-toggle>
-          </md-list-item>
+          </div>
 
-          <md-list-item> Oracion2
+          <div> Oracion2
             <ion-toggle [(ngModel)]="publicador.oracion2"> </ion-toggle>
-          </md-list-item>
+          </div>
 
-          <md-list-item> Ayudante
+          <div> Ayudante
             <ion-toggle [(ngModel)]="publicador.ayudante"> </ion-toggle>
-          </md-list-item>
+          </div>
 
-          <md-list-item> Primera conversacion
+          <div> Primera conversacion
             <ion-toggle [(ngModel)]="publicador.primeraconversacion"> </ion-toggle>
-          </md-list-item>
+          </div>
 
-          <md-list-item> Revisita
+          <div> Revisita
             <ion-toggle [(ngModel)]="publicador.revisita"> </ion-toggle>
-          </md-list-item>
+          </div>
 
-          <md-list-item> Curso Biblico
+          <div> Curso Biblico
             <ion-toggle [(ngModel)]="publicador.cursobiblico"> </ion-toggle>
-          </md-list-item>
+          </div>
 
-          <md-list-item> NVC 1
+          <div> NVC 1
             <ion-toggle [(ngModel)]="publicador.nvc1"> </ion-toggle>
-          </md-list-item>
+          </div>
 
-          <md-list-item> NVC 2
+          <div> NVC 2
             <ion-toggle [(ngModel)]="publicador.nvc2"> </ion-toggle>
-          </md-list-item>
+          </div>
 
-          <md-list-item> Estudio congregación
+          <div> Estudio congregación
             <ion-toggle [(ngModel)]="publicador.estudiocongregacion"> </ion-toggle>
-          </md-list-item>
+          </div>
 
-          <md-list-item> Lector Estudio congregación
+          <div> Lector Estudio congregación
             <ion-toggle [(ngModel)]="publicador.lectorestudiocongregacion"> </ion-toggle>
-          </md-list-item>
+          </div>
 
-          <md-list-item> Lector Atalaya
+          <div> Lector Atalaya
             <ion-toggle [(ngModel)]="publicador.lectoreatalaya"> </ion-toggle>
-          </md-list-item>
+          </div>
 
-          <md-list-item> Camara
+          <div> Camara
             <ion-toggle [(ngModel)]="publicador.camara"> </ion-toggle>
-          </md-list-item>
+          </div>
 
-          <md-list-item> Aparatos
+          <div> Aparatos
             <ion-toggle [(ngModel)]="publicador.aparatos"> </ion-toggle>
-          </md-list-item>
+          </div>
 
-          <md-list-item> Cronómetro
+          <div> Cronómetro
             <ion-toggle [(ngModel)]="publicador.cronometro"> </ion-toggle>
-          </md-list-item>
+          </div>
 
-          <md-list-item> Presidente Domingo
+          <div> Presidente Domingo
             <ion-toggle [(ngModel)]="publicador.presidentedomingo"> </ion-toggle>
-          </md-list-item>
+          </div>
 
-          <md-list-item> Discurso Seamos mejores maestros
+          <div> Discurso Seamos mejores maestros
             <ion-toggle [(ngModel)]="publicador.smmdiscurso"> </ion-toggle>
-          </md-list-item>
+          </div>
 
 
-        </md-list>
+        </ion-list>
       </ion-card-content>
     </div>
   </div>

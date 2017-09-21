@@ -4,53 +4,53 @@
 
 <div *ngIf="consejos" style="overflow-y:scroll;height:300px">
 
-  <md-list style="height:auto">
+  <ion-list style="height:auto">
     <md-card *ngFor="let consejo of consejos">
 
       <ion-card-header> <button ion-button (click)="editconsejo(consejo)"> {{ consejo.name }}</button></ion-card-header>
       <ion-card-content>
-        <md-list>
+        <ion-list>
 
-          <md-list-item> id: &nbsp;
+          <div> id: &nbsp;
             <ion-label>{{ consejo.id }}</ion-label>
-          </md-list-item>
+          </div>
 
-          <md-list-item> creado: &nbsp;
+          <div> creado: &nbsp;
             <ion-label>{{ displayDate(consejo.creado) }}</ion-label>
-          </md-list-item>
+          </div>
 
-          <md-list-item> modificado: &nbsp;
+          <div> modificado: &nbsp;
             <ion-label>{{ displayDate(consejo.modificado) }}</ion-label>
-          </md-list-item>
+          </div>
 
-          <md-list-item> publicadorid: &nbsp;
+          <div> publicadorid: &nbsp;
             <ion-label>{{ consejo.publicadorid }}</ion-label>
-          </md-list-item>
+          </div>
 
-          <md-list-item> Nombre: &nbsp;
+          <div> Nombre: &nbsp;
             <ion-label>{{ consejo.nombre }}</ion-label>
-          </md-list-item>
+          </div>
 
-          <md-list-item> Leccion: &nbsp;
+          <div> Leccion: &nbsp;
             <ion-label>{{ consejo.leccion }}</ion-label>
-          </md-list-item>
+          </div>
 
-          <md-list-item> Fecha Asignado
+          <div> Fecha Asignado
             <ion-datetime disabled displayFormat="MM/DD/YYYY" [(ngModel)]="consejo.fechaasignado"></ion-datetime>
-          </md-list-item>
+          </div>
 
-          <md-list-item> Proxima
+          <div> Proxima
             <ion-toggle disabled [(ngModel)]="consejo.proxima"> </ion-toggle>
-          </md-list-item>
+          </div>
 
-          <md-list-item> Terminado
+          <div> Terminado
             <ion-toggle disabled [(ngModel)]="consejo.terminado"> </ion-toggle>
-          </md-list-item>
+          </div>
 
-        </md-list>
+        </ion-list>
       </ion-card-content>
       <div class = "actions"> <i class="fa fa-trash-o" aria-hidden="true" (click)="deleteconsejo(consejo)">Delete</i> Edit</div>
     </md-card>
-  </md-list>
+  </ion-list>
 
 </div>
