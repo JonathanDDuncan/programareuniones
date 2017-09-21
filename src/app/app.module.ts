@@ -5,7 +5,6 @@ import { HttpModule, Http } from '@angular/http';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { Storage, IonicStorageModule } from '@ionic/storage';
 import { FormsModule } from '@angular/forms';
-import { MaterialModule } from '@angular/material';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
@@ -57,8 +56,7 @@ export function provideSettings(storage: Storage) {
     HttpModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
-    FormsModule,
-    MaterialModule
+    FormsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
