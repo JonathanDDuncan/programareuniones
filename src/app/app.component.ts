@@ -11,7 +11,7 @@ import { ContentPage } from '../pages/content/content';
 
 import { RXDBConsejoComponent } from '../pages/rxdbconsejo/rxdbconsejo.component';
 import { RXDBPublicadorSampleComponent } from './../pages/rxdbpublicadorsample/rxdbpublicadorsample.component';
-
+import { ScaffoldingPage } from '../pages/scaffolding/scaffolding';
 @Component({
   templateUrl: 'app.html'
 })
@@ -32,6 +32,8 @@ export class MyApp {
         { title: 'Publicadores', component: RXDBPublicadorSampleComponent  },
         { title: 'Consejos', component: RXDBConsejoComponent  },
         { title: 'Content', component: ContentPage  },
+        { title: 'ScaffoldingPage', component: ScaffoldingPage  },
+        
     
       ];
     }
