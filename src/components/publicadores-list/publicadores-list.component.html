@@ -10,8 +10,8 @@
   <md-list style="height:auto">
     <md-card *ngFor="let publicador of publicadores">
 
-      <md-card-title> <button ion-button (click)="editPublicador(publicador)"> {{ publicador.name }}</button></md-card-title>
-      <md-card-content>
+      <ion-card-header> <button ion-button (click)="editPublicador(publicador)"> {{ publicador.name }}</button></ion-card-header>
+      <ion-card-content>
         <md-list>
           <md-list-item> id: &nbsp;
             <ion-label>{{ publicador.id }}</ion-label>
@@ -106,8 +106,8 @@
           </md-list-item>
 
         </md-list>
-      </md-card-content>
-      <md-card-actions> <i class="fa fa-trash-o" aria-hidden="true" (click)="deletePublicador(publicador)">Delete</i> Edit</md-card-actions>
+      </ion-card-content>
+      <div class = "actions"> <i class="fa fa-trash-o" aria-hidden="true" (click)="deletePublicador(publicador)">Delete</i> Edit</div>
     </md-card>
   </md-list>
 

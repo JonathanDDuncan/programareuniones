@@ -12,8 +12,8 @@
         <p>Someone else has <b>deleted</b> this document. You can not save anymore.</p>
       </div>
 
-      <md-card-title> {{ tempDoc.name }} </md-card-title>
-      <md-card-content>
+      <ion-card-header> {{ tempDoc.name }} </ion-card-header>
+      <ion-card-content>
         <md-list>
           <md-list-item> id: &nbsp;
             <ion-label>{{ tempDoc.id }}</ion-label>
@@ -113,13 +113,13 @@
 
 
         </md-list>
-      </md-card-content>
+      </ion-card-content>
     </div>
   </div>
-  <md-card-actions>
+  <div class = "actions">
 
     <button ion-button color="primary" (click)="cancel()">cancel</button>
     <button *ngIf="!(tempDoc.deleted$ | async)" ion-button color="primary" (click)=submit()>insert</button>
 
-  </md-card-actions>
+  </div>
 </md-card>
