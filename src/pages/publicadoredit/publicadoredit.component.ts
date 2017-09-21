@@ -4,7 +4,7 @@ import { Component, ViewChildren, Input, OnChanges, Output, EventEmitter, OnInit
 import { RxDocument } from "rxdb";
 import { ProgramaDatabaseService } from '../../services/programadatabase.service';
 declare var require: any;
-
+ 
 @Component({
   templateUrl: './publicadoredit.component.html',
   styles: ['./publicadoredit.component.less'],
