@@ -9,8 +9,357 @@
       "type": "string",
       "primary": true,
       "default": ""
-    } 
-   
+    },
+    "creado": {
+      "type": "number",
+      "default": 0,
+      "description": "Fecha Creado"
+    },
+    "modificado": {
+      "type": "number",
+      "default": 0,
+      "description": "Fecha Modificado"
+    },
+    "sabasamblea": {
+      "type": "boolean",
+      "default": false,
+      "description": "Asamblea Sabado"
+    },
+    "sabasambleamensage": {
+      "type": "string",
+      "default":  "",
+      "description": "Asamblea Sabado Mensaje"
+    },
+    "fecha": {
+      "type": "number",
+      "default": 0,
+      "description": "Fecha principio de la semana"
+    },
+    "presidenteid": {
+      "type": "string",
+      "default": "",
+      "description": "Presidente sabado id"
+    },
+    "presidentename": {
+      "type": "string",
+      "default": "",
+      "description": "Presidente sabado name"
+    },
+    "cancion1id": {
+      "type": "string",
+      "default": "",
+      "description": "Cancion1 id"
+    },
+    "cancion1name": {
+      "type": "string",
+      "default": "",
+      "description": "Cancion1 name"
+    },
+    "oracion1id": {
+      "type": "string",
+      "default": "",
+      "description": "Oracion1 id"
+    },
+    "oracion1name": {
+      "type": "string",
+      "default": "",
+      "description": "Oracion1 name"
+    },
+    "tb1titulo": {
+      "type": "string",
+      "default":  "",
+      "description": "Discurso1 Titulo"
+    },
+    "tb1oradorid": {
+      "type": "string",
+      "default": "",
+      "description": "Orador 10 min id"
+    },
+    "tb1oradorname": {
+      "type": "string",
+      "default": "",
+      "description": "Orador 10 min name"
+    },
+    "tbperlasoradorid": {
+      "type": "string",
+      "default": "",
+      "description": "Oradar Perlas id"
+    },
+    "tbperlasoradorname": {
+      "type": "string",
+      "default": "",
+      "description": "Oradar Perlas name"
+    },
+    "consejolector": {
+      "type": "number",
+      "default": 0,
+      "description": "Consejo para el lector"
+    },
+    "tblectorid": {
+      "type": "string",
+      "default": "",
+      "description": "Lector Biblia id"
+    },
+    "tblectorname": {
+      "type": "string",
+      "default": "",
+      "description": "Lector Biblia name"
+    },
+    "hayestudiantes": {
+      "type": "string",
+      "default": true,
+      "description": "Hay Estudiantes"
+    },
+    "consejoprimera": {
+      "type": "number",
+      "default": 0,
+      "description": "Consejo Primera"
+    },
+    "smmprimeraesid": {
+      "type": "string",
+      "default": "",
+      "description": "smmprimeraes id"
+    },
+    "smmprimeraesname": {
+      "type": "string",
+      "default": "",
+      "description": "smmprimeraes name"
+    },
+    "smmprimeraayuid": {
+      "type": "string",
+      "default": "",
+      "description": "smmprimeraayu id"
+    },
+    "smmprimeraayuname": {
+      "type": "string",
+      "default": "",
+      "description": "smmprimeraayu name"
+    },
+    "consejorevisita": {
+      "type": "number",
+      "default": 0,
+      "description": "consejorevisita"
+    },
+    "smmrevisitaesid": {
+      "type": "string",
+      "default": "",
+      "description": "smmrevisitaes id"
+    },
+    "smmrevisitaesname": {
+      "type": "string",
+      "default": "",
+      "description": "smmrevisitaes name"
+    },
+    "smmrevisitaayuid": {
+      "type": "string",
+      "default": "",
+      "description": "smmrevisitaayu id"
+    },
+    "smmrevisitaayuname": {
+      "type": "string",
+      "default": "",
+      "description": "smmrevisitaayu name"
+    },
+    "escurso": {
+      "type": "boolean",
+      "default": false,
+      "description": "escurso"
+    },
+    "consejocb": {
+      "type": "number",
+      "default": 0,
+      "description": "Lector Biblia"
+    },
+    "smmcbesid": {
+      "type": "string",
+      "default": "",
+      "description": "smmcbes id"
+    },
+    "smmcbesname": {
+      "type": "string",
+      "default": "",
+      "description": "smmcbes name"
+    },
+    "smmcbayuid": {
+      "type": "string",
+      "default": "",
+      "description": "smmcbayu id"
+    },
+    "smmcbayuname": {
+      "type": "string",
+      "default": "",
+      "description": "smmcbayu name"
+    },
+    "presentacionesmesid": {
+      "type": "string",
+      "default": "",
+      "description": "presentacionesmes id"
+    },
+    "presentacionesmesname": {
+      "type": "string",
+      "default": "",
+      "description": "presentacionesmes name"
+    },
+    "cancion2": {
+      "type": "string",
+      "default":  "",
+      "description": "Cancion 2"
+    },
+    "nvctitulo1": {
+      "type": "string",
+      "default":  "",
+      "description": "Titulo 1"
+    },
+    "nvcmins1": {
+      "type": "string",
+      "default":  "",
+      "description": "nvcmins1"
+    },
+    "nvcorador1id": {
+      "type": "string",
+      "default": "",
+      "description": "Orador 1 id"
+    },
+    "nvcorador1name": {
+      "type": "string",
+      "default": "",
+      "description": "Orador 1 name"
+    },
+    "nvctitulo2id": {
+      "type": "string",
+      "default": "",
+      "description": "Titulo 2 id"
+    },
+    "nvctitulo2name": {
+      "type": "string",
+      "default": "",
+      "description": "Titulo 2 name"
+    },
+    "nvcmins2": {
+      "type": "string",
+      "default":  "",
+      "description": "nvcmins2"
+    },
+    "nvcorador2id": {
+      "type": "string",
+      "default": "",
+      "description": "Orador 2 id"
+    },
+    "nvcorador2name": {
+      "type": "string",
+      "default": "",
+      "description": "Orador 2 name"
+    },
+    "nvcestudiooradorid": {
+      "type": "string",
+      "default": "",
+      "description": "Estudio Libro conductor id"
+    },
+    "nvcestudiooradorname": {
+      "type": "string",
+      "default": "",
+      "description": "Estudio Libro conductor name"
+    },
+    "nvcestudiolectorid": {
+      "type": "string",
+      "default": "",
+      "description": "nvcestudiolector id"
+    },
+    "nvcestudiolectorname": {
+      "type": "string",
+      "default": "",
+      "description": "nvcestudiolector name"
+    },
+    "cancion3": {
+      "type": "string",
+      "default":  "",
+      "description": "Cancion 3"
+    },
+    "oracion2id": {
+      "type": "string",
+      "default": "",
+      "description": "Oracion 2 id"
+    },
+    "oracion2name": {
+      "type": "string",
+      "default": "",
+      "description": "Oracion 2 name"
+    },
+    "camaraid": {
+      "type": "string",
+      "default": "",
+      "description": "camara id"
+    },
+    "camaraname": {
+      "type": "string",
+      "default": "",
+      "description": "camara name"
+    },
+    "aparatosid": {
+      "type": "string",
+      "default": "",
+      "description": "aparatos id"
+    },
+    "aparatosname": {
+      "type": "string",
+      "default": "",
+      "description": "aparatos name"
+    },
+    "cronometroid": {
+      "type": "string",
+      "default": "",
+      "description": "cronometro id"
+    },
+    "cronometroname": {
+      "type": "string",
+      "default": "",
+      "description": "cronometro name"
+    },
+    "domasamblea": {
+      "type": "boolean",
+      "default": false,
+      "description": "camara"
+    },
+    "domasambleamensage": {
+      "type": "string",
+      "default": "Hay asamblea",
+      "description": "Hay asamblea"
+    },
+    "domfecha": {
+      "type": "string",
+      "default":  "",
+      "description": "Domingo fecha"
+    },
+    "dompresidenteid": {
+      "type": "string",
+      "default": "",
+      "description": "Presidente Domingo id"
+    },
+    "dompresidentename": {
+      "type": "string",
+      "default": "",
+      "description": "Presidente Domingo name"
+    },
+    "domdiscursante": {
+      "type": "string",
+      "default":  "",
+      "description": "Discursante"
+    },
+    "domhaydiscursante": {
+      "type": "boolean",
+      "default": false,
+      "description": "Hay Discursante"
+    },
+    "domlecturaid": {
+      "type": "string",
+      "default": "",
+      "description": "Lector Atalaya id"
+    },
+    "domlecturaname": {
+      "type": "string",
+      "default": "",
+      "description": "Lector Atalaya name"
+    }
   },
   "required": []
 }
