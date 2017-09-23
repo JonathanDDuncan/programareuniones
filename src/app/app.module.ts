@@ -16,6 +16,7 @@ import { RXDBConsejoComponent } from '../pages/rxdbconsejo/rxdbconsejo.component
 import { RXDBSemanaComponent } from '../pages/rxdbsemana/rxdbsemana.component';
 import { PublicadorNewEditComponent } from '../pages/publicadoredit/publicadoredit.component';
 import { PublicadorNewInsertComponent } from '../pages/publicadorinsert/publicadorinsert.component';
+import { SemanaInsertComponent } from '../pages/semanainsert/semanainsert.component';
 import { ConsejoInsertComponent } from '../pages/consejoinsert/consejoinsert.component';
 import { ContentPage } from '../pages/content/content';
 import { ProgramaDatabaseService } from '../services/programadatabase.service';
@@ -49,6 +50,7 @@ export function provideSettings(storage: Storage) {
     SemanasListComponent,
     PublicadorNewEditComponent,
     PublicadorNewInsertComponent,
+    SemanaInsertComponent,
     RXDBConsejoComponent,
     ConsejosListComponent,
     ConsejoInsertComponent,
@@ -74,6 +76,7 @@ export function provideSettings(storage: Storage) {
     RXDBSemanaComponent,
     PublicadorNewEditComponent,
     PublicadorNewInsertComponent,
+    SemanaInsertComponent,
     RXDBConsejoComponent,
     ConsejoInsertComponent
   ],

@@ -1,0 +1,49 @@
+<ion-card *ngIf="tempDoc" class="semaana-insert-component">
+  <div style="overflow-y:scroll;height:400px">
+    <div style="height:auto">
+      <div class="alert" *ngIf="!(tempDoc.synced$ | async)">
+        <h4>Warning:</h4>
+        <p>Someone else has <b>changed</b> this document. If you click save, you will overwrite the changes.</p>
+        <button md-raised-button color="primary" (click)=tempDoc.resync()>resync</button>
+      </div>
+
+      <div class="alert deleted" *ngIf="(tempDoc.deleted$ | async)">
+        <h4>Error:</h4>
+        <p>Someone else has <b>deleted</b> this document. You can not save anymore.</p>
+      </div>
+
+      <ion-card-header> {{ tempDoc.name }} </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <div> id: &nbsp;
+            <ion-label>{{ tempDoc.id }}</ion-label>
+          </div>
+
+          <div> creado: &nbsp;
+            <ion-label>{{ displayDate(tempDoc.creado) }}</ion-label>
+          </div>
+
+          <div> modificado: &nbsp;
+            <ion-label>{{ displayDate(tempDoc.modificado)  }}</ion-label>
+          </div>
+
+          <!-- <div>
+            <div>
+              <ion-label floating>Nombre </ion-label>
+              <ion-input type="text" [(ngModel)]="tempDoc.name" name="name"></ion-input>
+            </div>
+          </div> -->
+
+
+
+        </ion-list>
+      </ion-card-content>
+    </div>
+  </div>
+  <div class = "actions">
+
+    <button ion-button color="primary" (click)="cancel()">cancel</button>
+    <button *ngIf="!(tempDoc.deleted$ | async)" ion-button color="primary" (click)=submit()>insert</button>
+
+  </div>
+</ion-card>
