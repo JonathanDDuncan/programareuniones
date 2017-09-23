@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    <ion-title>Semanas</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <h3>RxDB Semanas</h3>
+  <ion-card>
+    <ion-card-header>Semanas</ion-card-header>
+    <semanas-list (edit)="editHero($event)"></semanas-list>
+  </ion-card>
+  <br/>
+  <ion-card>
+    <ion-card-header>Insert</ion-card-header>
+    <button ion-button (click)="insertSemana()">Add Semana</button>
+  </ion-card>
+</ion-content>

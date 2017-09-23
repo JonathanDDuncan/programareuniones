@@ -48,13 +48,19 @@ let collections = [
     name: 'publicadores',
     schema: require('../schemas/publicador.schema.json'),
     methods: {},
-    sync: true
+    sync: false
   },
   {
     name: 'consejos',
     schema: require('../schemas/consejo.schema.json'),
     methods: {},
-    sync: true
+    sync: false
+  },
+  {
+    name: 'semanas',
+    schema: require('../schemas/semana.schema.json'),
+    methods: {},
+    sync: false
   }
 ];
 
@@ -69,6 +75,7 @@ export class ProgramaDatabaseService {
   static dbPromise: Promise<RxDBTypes.RxProgramasDatabase> = null;
   private async _create(): Promise<RxDBTypes.RxProgramasDatabase> {
     console.log('DatabaseService: creating database..');
+    debugger;
     const db: RxDBTypes.RxProgramasDatabase = await RxDB.create({
       name: 'programa',
       adapter: useAdapter,

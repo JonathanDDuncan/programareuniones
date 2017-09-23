@@ -13,6 +13,7 @@ import { ScaffoldingPage } from '../pages/scaffolding/scaffolding';
 
 import { RXDBPublicadorSampleComponent } from '../pages/rxdbpublicadorsample/rxdbpublicadorsample.component';
 import { RXDBConsejoComponent } from '../pages/rxdbconsejo/rxdbconsejo.component';
+import { RXDBSemanaComponent } from '../pages/rxdbsemana/rxdbsemana.component';
 import { PublicadorNewEditComponent } from '../pages/publicadoredit/publicadoredit.component';
 import { PublicadorNewInsertComponent } from '../pages/publicadorinsert/publicadorinsert.component';
 import { ConsejoInsertComponent } from '../pages/consejoinsert/consejoinsert.component';
@@ -21,6 +22,7 @@ import { ProgramaDatabaseService } from '../services/programadatabase.service';
 
 import { ValuesPipe } from '../components/pipes/pipes'
 import { PublicadoresListComponent } from '../components/publicadores-list/publicadores-list.component';
+import { SemanasListComponent } from '../components/semanas-list/semanas-list.component';
 import { ConsejosListComponent } from '../components/consejos-list/consejos-list.component';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -42,7 +44,9 @@ export function provideSettings(storage: Storage) {
     // PublicadoresPage,
     ScaffoldingPage,
     RXDBPublicadorSampleComponent,
+    RXDBSemanaComponent,
     PublicadoresListComponent,
+    SemanasListComponent,
     PublicadorNewEditComponent,
     PublicadorNewInsertComponent,
     RXDBConsejoComponent,
@@ -67,6 +71,7 @@ export function provideSettings(storage: Storage) {
     // PublicadoresPage,
     ScaffoldingPage,
     RXDBPublicadorSampleComponent,
+    RXDBSemanaComponent,
     PublicadorNewEditComponent,
     PublicadorNewInsertComponent,
     RXDBConsejoComponent,

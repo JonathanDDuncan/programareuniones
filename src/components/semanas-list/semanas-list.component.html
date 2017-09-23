@@ -1,0 +1,115 @@
+<div class="loading" *ngIf="!semanas" class="publicador-list-component">
+  <ion-spinner class="app-spinner"></ion-spinner>
+</div>
+
+
+
+
+<div *ngIf="semanas" style="overflow-y:scroll;height:300px">
+
+  <ion-list style="height:auto">
+    <ion-card *ngFor="let semana of semanas">
+
+      <ion-card-header> <button ion-button (click)="editPublicador(publicador)">Edit {{ semana.id }}</button></ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <div> id: &nbsp;
+            <ion-label>{{ semana.id }}</ion-label>
+          </div>
+
+          <!-- <div> creado: &nbsp;
+            <ion-label>{{ displayDate(publicador.creado) }}</ion-label>
+          </div>
+
+          <div> modificado: &nbsp;
+            <ion-label>{{ displayDate(publicador.modificado) }}</ion-label>
+          </div>
+
+          <div> Nombre Publicador: &nbsp;
+            <ion-label>{{publicador.name}}</ion-label>
+          </div>
+
+          <div> Presidente Sabado
+            <ion-toggle disabled checked="{{ publicador.presidentesabado }}"> </ion-toggle>
+          </div>
+
+          <div> Discurso 1
+            <ion-toggle disabled checked="{{ publicador.discurso1 }}"> </ion-toggle>
+          </div>
+
+          <div> Lectura Biblia
+            <ion-toggle disabled checked="{{ publicador.lecturabiblia }}"> </ion-toggle>
+          </div>
+
+          <div> Oracion1
+            <ion-toggle disabled checked="{{ publicador.oracion1 }}"> </ion-toggle>
+          </div>
+
+          <div> Oracion2
+            <ion-toggle disabled checked="{{ publicador.oracion2 }}"> </ion-toggle>
+          </div>
+
+          <div> Ayudante
+            <ion-toggle disabled checked="{{ publicador.ayudante }}"> </ion-toggle>
+          </div>
+
+          <div> Primera conversacion
+            <ion-toggle disabled checked="{{ publicador.primeraconversacion }}"> </ion-toggle>
+          </div>
+
+          <div> Revisita
+            <ion-toggle disabled checked="{{ publicador.revisita }}"> </ion-toggle>
+          </div>
+
+          <div> Curso Biblico
+            <ion-toggle disabled checked="{{ publicador.cursobiblico }}"> </ion-toggle>
+          </div>
+
+          <div> NVC 1
+            <ion-toggle disabled checked="{{ publicador.nvc1 }}"> </ion-toggle>
+          </div>
+
+          <div> NVC 2
+            <ion-toggle disabled checked="{{ publicador.nvc2 }}"> </ion-toggle>
+          </div>
+
+          <div> Estudio congregación
+            <ion-toggle disabled checked="{{ publicador.estudiocongregacion }}"> </ion-toggle>
+          </div>
+
+          <div> Lector Estudio congregación
+            <ion-toggle disabled checked="{{ publicador.lectorestudiocongregacion }}"> </ion-toggle>
+          </div>
+
+          <div> Lector Atalaya
+            <ion-toggle disabled checked="{{ publicador.lectoreatalaya }}"> </ion-toggle>
+          </div>
+
+          <div> Camara
+            <ion-toggle disabled checked="{{ publicador.camara }}"> </ion-toggle>
+          </div>
+
+          <div> Aparatos
+            <ion-toggle disabled checked="{{ publicador.aparatos }}"> </ion-toggle>
+          </div>
+
+          <div> Cronómetro
+            <ion-toggle disabled checked="{{ publicador.cronometro }}"> </ion-toggle>
+          </div>
+
+          <div> Presidente Domingo
+            <ion-toggle disabled checked="{{ publicador.presidentedomingo }}"> </ion-toggle>
+          </div>
+
+          <div> Discurso Seamos mejores maestros
+            <ion-toggle disabled checked="{{ publicador.smmdiscurso }}"> </ion-toggle>
+          </div> -->
+
+        </ion-list>
+        <div class = "actions"> <i class="fa fa-trash-o" aria-hidden="true" (click)="deletePublicador(publicador)">Delete</i> Edit</div>
+      </ion-card-content>
+     
+    </ion-card>
+  </ion-list>
+
+</div>

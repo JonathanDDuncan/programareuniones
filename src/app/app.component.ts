@@ -11,6 +11,7 @@ import { ContentPage } from '../pages/content/content';
 
 import { RXDBConsejoComponent } from '../pages/rxdbconsejo/rxdbconsejo.component';
 import { RXDBPublicadorSampleComponent } from './../pages/rxdbpublicadorsample/rxdbpublicadorsample.component';
+import { RXDBSemanaComponent } from './../pages/rxdbsemana/rxdbsemana.component';
 import { ScaffoldingPage } from '../pages/scaffolding/scaffolding';
 @Component({
   templateUrl: 'app.html'
@@ -31,6 +32,7 @@ export class MyApp {
         { title: 'List', component: ListPage },
         { title: 'Publicadores', component: RXDBPublicadorSampleComponent  },
         { title: 'Consejos', component: RXDBConsejoComponent  },
+        { title: 'Semanas', component: RXDBSemanaComponent  },
         { title: 'Content', component: ContentPage  },
         { title: 'ScaffoldingPage', component: ScaffoldingPage  },
         
