@@ -36,8 +36,39 @@ export class ScaffoldingPage {
     schema: require('../../schemas/consejo.schema.json')
   };
 
-  scaffolding = [this.publicadores, this.consejo]
+  semana =
+  {
+    classname: "Semana",
+    singular: "semana",
+    plural: "semanas",
+    schema: require('../../schemas/semana.schema.json')
+  };
+  scaffolding = [this.semana]
 
+  dropdown(key: string) {
+    return this.choosecontrol("dropdown", key);
+  }
+  label(key: string) {
+    return this.choosecontrol("label", key);
+
+  }
+  defaultcontrol(key: string) {
+    return this.choosecontrol("default", key)
+  }
+
+  choosecontrol(caller: string, key: string) {
+    var showon = "";
+
+    if (key.endsWith("id") && key != "id") {
+      showon = "dropdown"
+    } else if ((key.endsWith("name") && key != "name") || key == "id") {
+      showon = "label"
+    }
+    else
+      showon = "default"
+
+    return (caller == showon);
+  }
 }
 
 

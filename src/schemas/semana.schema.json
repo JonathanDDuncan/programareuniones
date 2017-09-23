@@ -35,45 +35,75 @@
       "default": null,
       "description": "Fecha principio de la semana"
     },
-    "presidente": {
+    "presidenteid": {
       "type": "string",
-      "default": null,
-      "description": "Presidente sabado"
+      "default": "",
+      "description": "Presidente sabado id"
     },
-    "cancion1": {
+    "presidentename": {
       "type": "string",
-      "default": null,
-      "description": "Cancion1"
+      "default": "",
+      "description": "Presidente sabado name"
     },
-    "oracion1": {
+    "cancion1id": {
       "type": "string",
-      "default": null,
-      "description": "Oracion1"
+      "default": "",
+      "description": "Cancion1 id"
+    },
+    "cancion1name": {
+      "type": "string",
+      "default": "",
+      "description": "Cancion1 name"
+    },
+    "oracion1id": {
+      "type": "string",
+      "default": "",
+      "description": "Oracion1 id"
+    },
+    "oracion1name": {
+      "type": "string",
+      "default": "",
+      "description": "Oracion1 name"
     },
     "tb1titulo": {
       "type": "string",
       "default": null,
       "description": "Discurso1 Titulo"
     },
-    "tb1orador": {
+    "tb1oradorid": {
       "type": "string",
-      "default": null,
-      "description": "Orador 10 min"
+      "default": "",
+      "description": "Orador 10 min id"
     },
-    "tbperlasorador": {
+    "tb1oradorname": {
       "type": "string",
-      "default": null,
-      "description": "Oradar Perlas"
+      "default": "",
+      "description": "Orador 10 min name"
+    },
+    "tbperlasoradorid": {
+      "type": "string",
+      "default": "",
+      "description": "Oradar Perlas id"
+    },
+    "tbperlasoradorname": {
+      "type": "string",
+      "default": "",
+      "description": "Oradar Perlas name"
     },
     "consejolector": {
       "type": "number",
-      "default": null,
+      "default": 0,
       "description": "Consejo para el lector"
     },
-    "tblector": {
+    "tblectorid": {
       "type": "string",
-      "default": null,
-      "description": "Lector Biblia"
+      "default": "",
+      "description": "Lector Biblia id"
+    },
+    "tblectorname": {
+      "type": "string",
+      "default": "",
+      "description": "Lector Biblia name"
     },
     "hayestudiantes": {
       "type": "string",
@@ -82,33 +112,53 @@
     },
     "consejoprimera": {
       "type": "number",
-      "default": null,
+      "default": 0,
       "description": "Consejo Primera"
     },
-    "smmprimeraes": {
+    "smmprimeraesid": {
       "type": "string",
-      "default": null,
-      "description": "smmprimeraes"
+      "default": "",
+      "description": "smmprimeraes id"
     },
-    "smmprimeraayu": {
+    "smmprimeraesname": {
       "type": "string",
-      "default": null,
-      "description": "smmprimeraayu"
+      "default": "",
+      "description": "smmprimeraes name"
+    },
+    "smmprimeraayuid": {
+      "type": "string",
+      "default": "",
+      "description": "smmprimeraayu id"
+    },
+    "smmprimeraayuname": {
+      "type": "string",
+      "default": "",
+      "description": "smmprimeraayu name"
     },
     "consejorevisita": {
       "type": "number",
-      "default": null,
+      "default": 0,
       "description": "consejorevisita"
     },
-    "smmrevisitaes": {
+    "smmrevisitaesid": {
       "type": "string",
-      "default": null,
-      "description": "smmrevisitaes"
+      "default": "",
+      "description": "smmrevisitaes id"
     },
-    "smmrevisitaayu": {
+    "smmrevisitaesname": {
       "type": "string",
-      "default": null,
-      "description": "smmrevisitaayu"
+      "default": "",
+      "description": "smmrevisitaes name"
+    },
+    "smmrevisitaayuid": {
+      "type": "string",
+      "default": "",
+      "description": "smmrevisitaayu id"
+    },
+    "smmrevisitaayuname": {
+      "type": "string",
+      "default": "",
+      "description": "smmrevisitaayu name"
     },
     "escurso": {
       "type": "boolean",
@@ -117,23 +167,38 @@
     },
     "consejocb": {
       "type": "number",
-      "default": null,
+      "default": 0,
       "description": "Lector Biblia"
     },
-    "smmcbes": {
+    "smmcbesid": {
       "type": "string",
-      "default": null,
-      "description": "smmcbes"
+      "default": "",
+      "description": "smmcbes id"
     },
-    "smmcbayu": {
+    "smmcbesname": {
       "type": "string",
-      "default": null,
-      "description": "smmcbayu"
+      "default": "",
+      "description": "smmcbes name"
     },
-    "presentacionesmes": {
+    "smmcbayuid": {
       "type": "string",
-      "default": null,
-      "description": "presentacionesmes"
+      "default": "",
+      "description": "smmcbayu id"
+    },
+    "smmcbayuname": {
+      "type": "string",
+      "default": "",
+      "description": "smmcbayu name"
+    },
+    "presentacionesmesid": {
+      "type": "string",
+      "default": "",
+      "description": "presentacionesmes id"
+    },
+    "presentacionesmesname": {
+      "type": "string",
+      "default": "",
+      "description": "presentacionesmes name"
     },
     "cancion2": {
       "type": "string",
@@ -150,60 +215,105 @@
       "default": null,
       "description": "nvcmins1"
     },
-    "nvcorador1": {
+    "nvcorador1id": {
       "type": "string",
-      "default": null,
-      "description": "Orador 1"
+      "default": "",
+      "description": "Orador 1 id"
     },
-    "nvctitulo2": {
+    "nvcorador1name": {
       "type": "string",
-      "default": null,
-      "description": "Titulo 2"
+      "default": "",
+      "description": "Orador 1 name"
+    },
+    "nvctitulo2id": {
+      "type": "string",
+      "default": "",
+      "description": "Titulo 2 id"
+    },
+    "nvctitulo2name": {
+      "type": "string",
+      "default": "",
+      "description": "Titulo 2 name"
     },
     "nvcmins2": {
       "type": "string",
       "default": null,
       "description": "nvcmins2"
     },
-    "nvcorador2": {
+    "nvcorador2id": {
       "type": "string",
-      "default": null,
-      "description": "Orador 2"
+      "default": "",
+      "description": "Orador 2 id"
     },
-    "nvcestudioorador": {
+    "nvcorador2name": {
       "type": "string",
-      "default": null,
-      "description": "Estudio Libro conductor"
+      "default": "",
+      "description": "Orador 2 name"
     },
-    "nvcestudiolector": {
+    "nvcestudiooradorid": {
       "type": "string",
-      "default": null,
-      "description": "nvcestudiolector"
+      "default": "",
+      "description": "Estudio Libro conductor id"
+    },
+    "nvcestudiooradorname": {
+      "type": "string",
+      "default": "",
+      "description": "Estudio Libro conductor name"
+    },
+    "nvcestudiolectorid": {
+      "type": "string",
+      "default": "",
+      "description": "nvcestudiolector id"
+    },
+    "nvcestudiolectorname": {
+      "type": "string",
+      "default": "",
+      "description": "nvcestudiolector name"
     },
     "cancion3": {
       "type": "string",
       "default": null,
       "description": "Cancion 3"
     },
-    "oracion2": {
+    "oracion2id": {
       "type": "string",
-      "default": null,
-      "description": "Oracion 2"
+      "default": "",
+      "description": "Oracion 2 id"
     },
-    "camara": {
+    "oracion2name": {
       "type": "string",
-      "default": null,
-      "description": "camara"
+      "default": "",
+      "description": "Oracion 2 name"
     },
-    "aparatos": {
+    "camaraid": {
       "type": "string",
-      "default": null,
-      "description": "aparatos"
+      "default": "",
+      "description": "camara id"
     },
-    "cronometro": {
+    "camaraname": {
       "type": "string",
-      "default": null,
-      "description": "cronometro"
+      "default": "",
+      "description": "camara name"
+    },
+    "aparatosid": {
+      "type": "string",
+      "default": "",
+      "description": "aparatos id"
+    },
+    "aparatosname": {
+      "type": "string",
+      "default": "",
+      "description": "aparatos name"
+    },
+    "cronometroid": {
+      "type": "string",
+      "default": "",
+      "description": "cronometro id"
+    },
+    "cronometroname": {
+      "type": "string",
+      "default": "",
+      "description": "cronometro name"
     },
     "domasamblea": {
       "type": "boolean",
@@ -220,10 +330,15 @@
       "default": null,
       "description": "Domingo fecha"
     },
-    "dompresidente": {
+    "dompresidenteid": {
       "type": "string",
-      "default": null,
-      "description": "Presidente"
+      "default": "",
+      "description": "Presidente Domingo id"
+    },
+    "dompresidentename": {
+      "type": "string",
+      "default": "",
+      "description": "Presidente Domingo name"
     },
     "domdiscursante": {
       "type": "string",
@@ -235,10 +350,15 @@
       "default": false,
       "description": "Hay Discursante"
     },
-    "domlectura": {
+    "domlecturaid": {
       "type": "string",
-      "default": null,
-      "description": "Lector Atalaya"
+      "default": "",
+      "description": "Lector Atalaya id"
+    },
+    "domlecturaname": {
+      "type": "string",
+      "default": "",
+      "description": "Lector Atalaya name"
     }
   },
   "required": []
