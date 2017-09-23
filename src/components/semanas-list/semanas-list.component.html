@@ -10,7 +10,7 @@
   <ion-list style="height:auto">
     <ion-card *ngFor="let semana of semanas">
 
-      <ion-card-header> <button ion-button (click)="editPublicador(publicador)">Edit {{ semana.id }}</button></ion-card-header>
+      <ion-card-header> <button ion-button (click)="editSemana(semana)">Edit {{ semana.id }}</button></ion-card-header>
       <ion-card-content>
         <ion-list>
           <div> id: &nbsp;
@@ -106,7 +106,7 @@
           </div> -->
 
         </ion-list>
-        <div class = "actions"> <i class="fa fa-trash-o" aria-hidden="true" (click)="deletePublicador(publicador)">Delete</i> Edit</div>
+        <div class = "actions"> <i class="fa fa-trash-o" aria-hidden="true" (click)="deleteSemana(semana)">Delete</i> Edit</div>
       </ion-card-content>
      
     </ion-card>

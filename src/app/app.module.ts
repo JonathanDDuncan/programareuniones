@@ -15,6 +15,7 @@ import { RXDBPublicadorSampleComponent } from '../pages/rxdbpublicadorsample/rxd
 import { RXDBConsejoComponent } from '../pages/rxdbconsejo/rxdbconsejo.component';
 import { RXDBSemanaComponent } from '../pages/rxdbsemana/rxdbsemana.component';
 import { PublicadorNewEditComponent } from '../pages/publicadoredit/publicadoredit.component';
+import { SemanaEditComponent } from '../pages/semanaedit/semanaedit.component';
 import { PublicadorNewInsertComponent } from '../pages/publicadorinsert/publicadorinsert.component';
 import { SemanaInsertComponent } from '../pages/semanainsert/semanainsert.component';
 import { ConsejoInsertComponent } from '../pages/consejoinsert/consejoinsert.component';
@@ -49,6 +50,7 @@ export function provideSettings(storage: Storage) {
     PublicadoresListComponent,
     SemanasListComponent,
     PublicadorNewEditComponent,
+    SemanaEditComponent,
     PublicadorNewInsertComponent,
     SemanaInsertComponent,
     RXDBConsejoComponent,
@@ -75,6 +77,7 @@ export function provideSettings(storage: Storage) {
     RXDBPublicadorSampleComponent,
     RXDBSemanaComponent,
     PublicadorNewEditComponent,
+    SemanaEditComponent,
     PublicadorNewInsertComponent,
     SemanaInsertComponent,
     RXDBConsejoComponent,

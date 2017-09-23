@@ -1,0 +1,43 @@
+<ion-card *ngIf="semana" class="semana-edit-component">
+  <div style="overflow-y:scroll;height:400px">
+    <div style="height:auto">
+      <div class="alert" *ngIf="!(semana.synced$ | async)">
+        <h4>Warning:</h4>
+        <p>Someone else has <b>changed</b> this document. If you click save, you will overwrite the changes.</p>
+        <button md-raised-button color="primary" (click)=semana.resync()>resync</button>
+      </div>
+
+      <div class="alert deleted" *ngIf="(semana.deleted$ | async)">
+        <h4>Error:</h4>
+        <p>Someone else has <b>deleted</b> this document. You can not save anymore.</p>
+      </div>
+
+      <ion-card-header> {{ semana.id }} </ion-card-header>
+      <ion-card-content>
+        <ion-list>
+          <div> id: &nbsp;
+            <ion-label>{{ semana.id }}</ion-label>
+          </div>
+
+          <div> creado: &nbsp;
+            <ion-label>{{ displayDate(semana.creado) }}</ion-label>
+          </div>
+
+          <div> modificado: &nbsp;
+            <ion-label>{{ displayDate(semana.modificado) }}</ion-label>
+          </div>
+
+         
+
+
+        </ion-list>
+      </ion-card-content>
+    </div>
+  </div>
+  <div class = "actions">
+
+    <button ion-button color="primary" (click)="cancel()">cancel</button>
+    <button ion-button *ngIf="!(semana.deleted$ | async)" color="primary" (click)=submit()>submit</button>
+
+  </div>
+</ion-card>

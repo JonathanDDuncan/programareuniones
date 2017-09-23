@@ -21,7 +21,7 @@ export class ConsejosListComponent implements OnInit, OnDestroy {
 
   @Output('edit') editChange: EventEmitter<RxDBTypes.RxConsejoDocument> = new EventEmitter();
   set edit(consejo) {
-    debugger;
+    
     // console.log('editconsejo: ' + consejo.name);
     // this.editChange.emit(consejo);
   }

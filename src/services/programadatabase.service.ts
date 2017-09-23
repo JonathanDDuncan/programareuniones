@@ -75,7 +75,7 @@ export class ProgramaDatabaseService {
   static dbPromise: Promise<RxDBTypes.RxProgramasDatabase> = null;
   private async _create(): Promise<RxDBTypes.RxProgramasDatabase> {
     console.log('DatabaseService: creating database..');
-    debugger;
+   
     const db: RxDBTypes.RxProgramasDatabase = await RxDB.create({
       name: 'programa',
       adapter: useAdapter,

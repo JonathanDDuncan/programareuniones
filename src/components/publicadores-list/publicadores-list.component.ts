@@ -21,7 +21,7 @@ export class PublicadoresListComponent implements OnInit, OnDestroy {
 
   @Output('edit') editChange: EventEmitter<RxDBTypes.RxPublicadorDocument> = new EventEmitter();
   set edit(publicador) {
-    debugger;
+     
     // console.log('editPublicador: ' + publicador.name);
     // this.editChange.emit(publicador);
   }

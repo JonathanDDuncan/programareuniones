@@ -65,7 +65,7 @@ export class ConsejoInsertComponent {
 
     console.log('tempDoc: ' + JSON.stringify(this.tempDoc));
     try {
-      debugger;
+      
       this.tempDoc.leccion = parseInt( this.tempDoc.leccion);
       let publicador = this.search( this.tempDoc.publicadorid, this.publicadores)
       if (publicador)
