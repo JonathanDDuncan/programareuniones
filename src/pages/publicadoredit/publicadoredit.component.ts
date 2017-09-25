@@ -28,6 +28,7 @@ export class PublicadorNewEditComponent {
     public viewCtrl: ViewController
   ) {
     this.publicador = params.get('publicador1')
+    console.log(JSON.stringify(this.publicador,   null, ' '))
   }
   dismiss() {
     this.viewCtrl.dismiss();

@@ -26,6 +26,11 @@
       "default": "",
       "description": "Nombre Publicador"
     },
+    "anciano": {
+      "type": "boolean",
+      "default": false,
+      "description": "Anciano"
+    },
     "presidentesabado": {
       "type": "boolean",
       "default": false,
@@ -70,6 +75,11 @@
       "type": "boolean",
       "default": false,
       "description": "Curso Biblico"
+    },
+    "smmdiscurso": {
+      "type": "boolean",
+      "default": false,
+      "description": "Discurso Seamos mejores maestros"
     },
     "nvc1": {
       "type": "boolean",
@@ -116,12 +126,11 @@
       "default": false,
       "description": "Presidente Domingo"
     },
-    "smmdiscurso": {
-      "type": "boolean",
-      "default": false,
-      "description": "Discurso Seamos mejores maestros"
+    "cantantenum": {
+      "type": "number",
+      "default": 0,
+      "description": "Numero de cantante"
     }
-
   },
   "required": []
 }
