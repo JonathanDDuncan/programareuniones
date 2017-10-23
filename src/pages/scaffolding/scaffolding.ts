@@ -46,13 +46,20 @@ export class ScaffoldingPage {
   scaffolding = [this.semana]
 
   dropdown(key: string) {
+    debugger;
     return this.choosecontrol("dropdown", key);
   }
   label(key: string) {
+    debugger;
     return this.choosecontrol("label", key);
 
   }
   defaultcontrol(key: string) {
+    debugger;
+    return this.choosecontrol("default", key)
+  }
+  textinput(key: string) {
+    debugger;
     return this.choosecontrol("default", key)
   }
 
@@ -65,7 +72,7 @@ export class ScaffoldingPage {
       showon = "label"
     }
     else
-      showon = "default"
+      showon = "textinput"
 
     return (caller == showon);
   }

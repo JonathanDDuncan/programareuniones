@@ -1,8 +1,8 @@
 <ion-header>
   <ion-navbar>
     <button ion-button menuToggle>
-          <ion-icon name="menu"></ion-icon>
-        </button>
+      <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-title>Scaffolding</ion-title>
   </ion-navbar>
 </ion-header>
@@ -10,23 +10,37 @@
 
 <ion-content class="scaffolding" padding>
   <pre>{{scaffolding | json}}</pre> /**
-  <br/> * custom typings so typescript knows about the schema-fields<br/> * @type {{ '{' }}[type]{{ '}' }} <br/> */
-  <br/> import * as RxDB from 'rxdb';<br/> import {{ '{' }} Observable {{ '}' }} from 'rxjs';<br/>
+  <br/> * custom typings so typescript knows about the schema-fields
+  <br/> * @type {{ '{' }}[type]{{ '}' }}
+  <br/> */
+  <br/> import * as RxDB from 'rxdb';
+  <br/> import {{ '{' }} Observable {{ '}' }} from 'rxjs';
+  <br/>
   <div *ngFor="let item of scaffolding">
 
     <p>
-      {{"//"}} {{ item.schema.title}}<br/> declare interface Rx{{item.classname}}DocumentData<br/> {{ '{' }}<br/>
+      {{"//"}} {{ item.schema.title}}
+      <br/> declare interface Rx{{item.classname}}DocumentData
+      <br/> {{ '{' }}
+      <br/>
       <p *ngFor="let p1 of item.schema.properties | values:'key'">
         {{p1.k}}?: {{p1.type}};
       </p>
 
-      {{ '}' }} <br/> export class Rx{{item.classname}}Document extends RxDB.RxDocument <br/> {{ '{' }}<br/>
+      {{ '}' }}
+      <br/> export class Rx{{item.classname}}Document extends RxDB.RxDocument
+      <br/> {{ '{' }}
+      <br/>
       <p *ngFor="let p1 of item.schema.properties | values:'key'">
-        {{p1.k}}<span *ngIf="Required(item.schema.required, p1.k, p1.primary)">?</span>: {{p1.type}};
+        {{p1.k}}
+        <span *ngIf="Required(item.schema.required, p1.k, p1.primary)">?</span>: {{p1.type}};
       </p>
 
-      {{ '}' }} <br/> declare class Rx{{item.classname}}Collection extends RxDB.RxCollection &lt;Rx{{item.classname}}Document&gt;
-      {{ '{' }} <br/> {{ '}' }} <br/>
+      {{ '}' }}
+      <br/> declare class Rx{{item.classname}}Collection extends RxDB.RxCollection &lt;Rx{{item.classname}}Document&gt; {{ '{'
+      }}
+      <br/> {{ '}' }}
+      <br/>
 
       <p>//Default object</p>
 
@@ -34,7 +48,7 @@
       <p *ngFor="let p1 of item.schema.properties | values:'key'">
 
         <span *ngIf="p1.type === 'string';else non_string">
-           {{p1.k}}:&quot;{{p1.default}}&quot;,
+          {{p1.k}}:&quot;{{p1.default}}&quot;,
         </span>
 
         <ng-template #non_string> {{p1.k}}:{{p1.default}}, </ng-template>
@@ -42,24 +56,30 @@
       </p>
       {{ '}' }}
   </div>
-  export class RxProgramasDatabase extends RxDB.RxDatabase {{ '{' }}<br/>
+  export class RxProgramasDatabase extends RxDB.RxDatabase {{ '{' }}
+  <br/>
   <div *ngFor="let item of scaffolding">
-    {{item.plural}}?: Rx{{item.classname}}Collection;<br/>
+    {{item.plural}}?: Rx{{item.classname}}Collection;
+    <br/>
   </div>
-  {{ '}' }}<br/> export default {{ '{' }}
+  {{ '}' }}
+  <br/> export default {{ '{' }}
   <div *ngFor="let item of scaffolding">
-    Rx{{item.classname}}Document,<br/> Rx{{item.classname}}Collection,
+    Rx{{item.classname}}Document,
+    <br/> Rx{{item.classname}}Collection,
 
     <br/>
   </div>
-  <hr> RxProgramasDatabase {{ '}' }};<br/> declare var require: any;
+  <hr> RxProgramasDatabase {{ '}' }};
+  <br/> declare var require: any;
   <div *ngFor="let item of scaffolding">
 
     <p>//Default object</p>
 
     let default{{item.classname}} = {{ ' {' }}
     <p *ngFor="let p1 of item.schema.properties | values:'key'">
-      {{p1.k}}:{{p1.default}}, <br/>
+      {{p1.k}}:{{p1.default}},
+      <br/>
     </p>
     {{ '}' }}
 
@@ -70,14 +90,26 @@
   <div *ngFor="let item of scaffolding">
     &lt;ion-card-header&gt; &lt;button ion-button (click)=&quot;editPublicador(publicador)&quot;&gt; {{'{'}}{{'{'}} publicador.name
     {{ '}' }}{{ '}' }}&lt;/button&gt;&lt;/ion-card-header&gt; &lt;ion-card-content&gt; &lt;ion-list&gt;
-    <p *ngFor="let p2 of item.schema.properties | values:'key'">
+    <div *ngFor="let p2 of item.schema.properties | values:'key'">
 
-      &lt;div&gt; {{p2.description}} &lt;ion-toggle disabled checked=&quot;{{'{'}}{{'{'}} {{item.singular}}.{{p2.k}} {{ '}' }}{{
-      '}' }}&quot;&gt; &lt;/ion-toggle&gt;&lt;/div&gt;
+      <div *ngIf="dropdown(p2.k)">
+        &lt;ion-label color=&quot;primary&quot; stacked&gt;{{p2.description}}&lt;/ion-label&gt; &lt;ion-select {{'['}}{{'('}}ngModel{{
+        ')' }}{{ ']' }}=&quot;{{item.singular}}.{{p2.k}}&quot; okText=&quot;Okay&quot; cancelText=&quot;Dismiss&quot; disabled=&quot;true&quot; {{'['}}compareWith{{
+        ']' }}=&quot;compareFn&quot;&gt; &lt;ion-option *ngFor=&quot;let o of myData&quot; {{'['}}value{{ ']' }}=&quot;o.value&quot;&gt;{{'{'}}{{'{'}}o.text{{'}'}}{{'}'}}&lt;/ion-option&gt;
+        &lt;/ion-select&gt;
 
-    </p>
-    &lt;/ion-list&gt; &lt;/ion-card-content&gt; &lt;div class = "actions"&gt; &lt;i class=&quot;fa fa-trash-o&quot; aria-hidden=&quot;true&quot;
-    (click)=&quot;deletePublicador(publicador)&quot;&gt;Delete&lt;/i&gt; Edit&lt;/div&gt;
+      </div>
+      <div *ngIf="label(p2.k)">
+        &lt;ion-label color=&quot;primary&quot; stacked&gt;{{p2.description}}&lt;/ion-label&gt; &lt;ion-label color=&quot;primary&quot;
+        stacked &gt;{{'{'}}{{'{'}}{{item.singular}}.{{p2.k}}{{'}'}}{{'}'}}&lt;/ion-label&gt;
+      </div>
+
+
+    </div>
+<!--   
+      &lt;/ion-list&gt; &lt;/ion-card-content&gt; &lt;div class = "actions"&gt; &lt;i class=&quot;fa fa-trash-o&quot; aria-hidden=&quot;true&quot;
+      (click)=&quot;deletePublicador(publicador)&quot;&gt;Delete&lt;/i&gt; Edit&lt;/div&gt;
+   -->
     <hr>
   </div>
 
@@ -87,20 +119,25 @@
     {{ '}' }}{{ '}' }}&lt;/button&gt;&lt;/ion-card-header&gt; &lt;ion-card-content&gt; &lt;ion-list&gt;
     <div *ngFor="let p2 of item.schema.properties | values:'key'">
 
+      <div *ngIf="textinput(p2.k)">
+        &lt;ion-label color=&quot;primary&quot; stacked&gt;{{p2.description}}&lt;/ion-label&gt; &lt;ion-input type=&quot;tel&quot;
+        placeholder=&quot;{{p2.description}}&quot;&gt;&lt;/ion-input&gt;
+
+      </div>
       <div *ngIf="dropdown(p2.k)">
-        <div> Dropdown</div>
-        &lt;div&gt; {{p2.description}} &lt;ion-toggle {{'['}}{{'('}}ngModel{{ ')' }}{{ ']' }}=&quot;{{item.singular}}.{{p2.k}}&quot;
-        &gt; &lt;/ion-toggle&gt;&lt;/div&gt;
+        &lt;ion-label color=&quot;primary&quot; stacked&gt;{{p2.description}}&lt;/ion-label&gt; &lt;ion-select {{'['}}{{'('}}ngModel{{
+        ')' }}{{ ']' }}=&quot;{{item.singular}}.{{p2.k}}&quot; okText=&quot;Okay&quot; cancelText=&quot;Dismiss&quot; {{'['}}compareWith{{
+        ']' }}=&quot;compareFn&quot;&gt; &lt;ion-option *ngFor=&quot;let o of myData&quot; {{'['}}value{{ ']' }}=&quot;o.value&quot;&gt;{{'{'}}{{'{'}}o.text{{'}'}}{{'}'}}&lt;/ion-option&gt;
+        &lt;/ion-select&gt;
+
       </div>
       <div *ngIf="label(p2.k)">
-        <div> Label</div>
-        &lt;div&gt; {{p2.description}} &lt;ion-toggle {{'['}}{{'('}}ngModel{{ ')' }}{{ ']' }}=&quot;{{item.singular}}.{{p2.k}}&quot;
-        &gt; &lt;/ion-toggle&gt;&lt;/div&gt;
+        &lt;ion-label color=&quot;primary&quot; stacked&gt;{{p2.description}}&lt;/ion-label&gt; &lt;ion-label color=&quot;primary&quot;
+        stacked &gt;{{'{'}}{{'{'}}{{item.singular}}.{{p2.k}}{{'}'}}{{'}'}}&lt;/ion-label&gt;
       </div>
       <div *ngIf="defaultcontrol(p2.k)">
-        <div> Default</div>
-        &lt;div&gt; {{p2.description}} &lt;ion-toggle {{'['}}{{'('}}ngModel{{ ')' }}{{ ']' }}=&quot;{{item.singular}}.{{p2.k}}&quot;
-        &gt; &lt;/ion-toggle&gt;&lt;/div&gt;
+        &lt;ion-label color=&quot;primary&quot; stacked&gt;{{p2.description}}&lt;/ion-label&gt; &lt;div&gt; {{p2.description}} &lt;ion-label
+        {{'['}}{{'('}}ngModel{{ ')' }}{{ ']' }}=&quot;{{item.singular}}.{{p2.k}}&quot; &gt; &lt;/ion-label&gt;&lt;/div&gt;
       </div>
 
     </div>

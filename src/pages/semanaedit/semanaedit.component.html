@@ -26,10 +26,58 @@
           <div> modificado: &nbsp;
             <ion-label>{{ displayDate(semana.modificado) }}</ion-label>
           </div>
-
-         
-
-
+   
+          <ion-label color="primary" stacked>Presidente sabado id</ion-label> <ion-select [(ngModel)]="semana.presidenteid" okText="Okay" cancelText="Dismiss" [compareWith]="compareFn"> 
+            <ion-option *ngFor="let o of myData" [value]="o.value">{{o.text}}</ion-option> </ion-select>
+           <ion-label color="primary" stacked>Presidente sabado name</ion-label> <ion-label color="primary" stacked >{{semana.presidentename}}</ion-label>
+          <ion-label color="primary" stacked>Cancion1 id</ion-label> <ion-select [(ngModel)]="semana.cancion1id" okText="Okay" cancelText="Dismiss" [compareWith]="compareFn"> <ion-option *ngFor="let o of myData" [value]="o.value">{{o.text}}</ion-option> </ion-select>
+          <ion-label color="primary" stacked>Cancion1 name</ion-label> <ion-label color="primary" stacked >{{semana.cancion1name}}</ion-label>
+          <ion-label color="primary" stacked>Oracion1 id</ion-label> <ion-select [(ngModel)]="semana.oracion1id" okText="Okay" cancelText="Dismiss" [compareWith]="compareFn"> <ion-option *ngFor="let o of myData" [value]="o.value">{{o.text}}</ion-option> </ion-select>
+          <ion-label color="primary" stacked>Oracion1 name</ion-label> <ion-label color="primary" stacked >{{semana.oracion1name}}</ion-label>
+          <ion-label color="primary" stacked>Orador 10 min id</ion-label> <ion-select [(ngModel)]="semana.tb1oradorid" okText="Okay" cancelText="Dismiss" [compareWith]="compareFn"> <ion-option *ngFor="let o of myData" [value]="o.value">{{o.text}}</ion-option> </ion-select>
+          <ion-label color="primary" stacked>Orador 10 min name</ion-label> <ion-label color="primary" stacked >{{semana.tb1oradorname}}</ion-label>
+          <ion-label color="primary" stacked>Oradar Perlas id</ion-label> <ion-select [(ngModel)]="semana.tbperlasoradorid" okText="Okay" cancelText="Dismiss" [compareWith]="compareFn"> <ion-option *ngFor="let o of myData" [value]="o.value">{{o.text}}</ion-option> </ion-select>
+          <ion-label color="primary" stacked>Oradar Perlas name</ion-label> <ion-label color="primary" stacked >{{semana.tbperlasoradorname}}</ion-label>
+          <ion-label color="primary" stacked>Lector Biblia id</ion-label> <ion-select [(ngModel)]="semana.tblectorid" okText="Okay" cancelText="Dismiss" [compareWith]="compareFn"> <ion-option *ngFor="let o of myData" [value]="o.value">{{o.text}}</ion-option> </ion-select>
+          <ion-label color="primary" stacked>Lector Biblia name</ion-label> <ion-label color="primary" stacked >{{semana.tblectorname}}</ion-label>
+          <ion-label color="primary" stacked>smmprimeraes id</ion-label> <ion-select [(ngModel)]="semana.smmprimeraesid" okText="Okay" cancelText="Dismiss" [compareWith]="compareFn"> <ion-option *ngFor="let o of myData" [value]="o.value">{{o.text}}</ion-option> </ion-select>
+          <ion-label color="primary" stacked>smmprimeraes name</ion-label> <ion-label color="primary" stacked >{{semana.smmprimeraesname}}</ion-label>
+          <ion-label color="primary" stacked>smmprimeraayu id</ion-label> <ion-select [(ngModel)]="semana.smmprimeraayuid" okText="Okay" cancelText="Dismiss" [compareWith]="compareFn"> <ion-option *ngFor="let o of myData" [value]="o.value">{{o.text}}</ion-option> </ion-select>
+          <ion-label color="primary" stacked>smmprimeraayu name</ion-label> <ion-label color="primary" stacked >{{semana.smmprimeraayuname}}</ion-label>
+          <ion-label color="primary" stacked>smmrevisitaes id</ion-label> <ion-select [(ngModel)]="semana.smmrevisitaesid" okText="Okay" cancelText="Dismiss" [compareWith]="compareFn"> <ion-option *ngFor="let o of myData" [value]="o.value">{{o.text}}</ion-option> </ion-select>
+          <ion-label color="primary" stacked>smmrevisitaes name</ion-label> <ion-label color="primary" stacked >{{semana.smmrevisitaesname}}</ion-label>
+          <ion-label color="primary" stacked>smmrevisitaayu id</ion-label> <ion-select [(ngModel)]="semana.smmrevisitaayuid" okText="Okay" cancelText="Dismiss" [compareWith]="compareFn"> <ion-option *ngFor="let o of myData" [value]="o.value">{{o.text}}</ion-option> </ion-select>
+          <ion-label color="primary" stacked>smmrevisitaayu name</ion-label> <ion-label color="primary" stacked >{{semana.smmrevisitaayuname}}</ion-label>
+          <ion-label color="primary" stacked>smmcbes id</ion-label> <ion-select [(ngModel)]="semana.smmcbesid" okText="Okay" cancelText="Dismiss" [compareWith]="compareFn"> <ion-option *ngFor="let o of myData" [value]="o.value">{{o.text}}</ion-option> </ion-select>
+          <ion-label color="primary" stacked>smmcbes name</ion-label> <ion-label color="primary" stacked >{{semana.smmcbesname}}</ion-label>
+          <ion-label color="primary" stacked>smmcbayu id</ion-label> <ion-select [(ngModel)]="semana.smmcbayuid" okText="Okay" cancelText="Dismiss" [compareWith]="compareFn"> <ion-option *ngFor="let o of myData" [value]="o.value">{{o.text}}</ion-option> </ion-select>
+          <ion-label color="primary" stacked>smmcbayu name</ion-label> <ion-label color="primary" stacked >{{semana.smmcbayuname}}</ion-label>
+          <ion-label color="primary" stacked>presentacionesmes id</ion-label> <ion-select [(ngModel)]="semana.presentacionesmesid" okText="Okay" cancelText="Dismiss" [compareWith]="compareFn"> <ion-option *ngFor="let o of myData" [value]="o.value">{{o.text}}</ion-option> </ion-select>
+          <ion-label color="primary" stacked>presentacionesmes name</ion-label> <ion-label color="primary" stacked >{{semana.presentacionesmesname}}</ion-label>
+          <ion-label color="primary" stacked>Orador 1 id</ion-label> <ion-select [(ngModel)]="semana.nvcorador1id" okText="Okay" cancelText="Dismiss" [compareWith]="compareFn"> <ion-option *ngFor="let o of myData" [value]="o.value">{{o.text}}</ion-option> </ion-select>
+          <ion-label color="primary" stacked>Orador 1 name</ion-label> <ion-label color="primary" stacked >{{semana.nvcorador1name}}</ion-label>
+          <ion-label color="primary" stacked>Titulo 2 id</ion-label> <ion-select [(ngModel)]="semana.nvctitulo2id" okText="Okay" cancelText="Dismiss" [compareWith]="compareFn"> <ion-option *ngFor="let o of myData" [value]="o.value">{{o.text}}</ion-option> </ion-select>
+          <ion-label color="primary" stacked>Titulo 2 name</ion-label> <ion-label color="primary" stacked >{{semana.nvctitulo2name}}</ion-label>
+          <ion-label color="primary" stacked>Orador 2 id</ion-label> <ion-select [(ngModel)]="semana.nvcorador2id" okText="Okay" cancelText="Dismiss" [compareWith]="compareFn"> <ion-option *ngFor="let o of myData" [value]="o.value">{{o.text}}</ion-option> </ion-select>
+          <ion-label color="primary" stacked>Orador 2 name</ion-label> <ion-label color="primary" stacked >{{semana.nvcorador2name}}</ion-label>
+          <ion-label color="primary" stacked>Estudio Libro conductor id</ion-label> <ion-select [(ngModel)]="semana.nvcestudiooradorid" okText="Okay" cancelText="Dismiss" [compareWith]="compareFn"> <ion-option *ngFor="let o of myData" [value]="o.value">{{o.text}}</ion-option> </ion-select>
+          <ion-label color="primary" stacked>Estudio Libro conductor name</ion-label> <ion-label color="primary" stacked >{{semana.nvcestudiooradorname}}</ion-label>
+          <ion-label color="primary" stacked>nvcestudiolector id</ion-label> <ion-select [(ngModel)]="semana.nvcestudiolectorid" okText="Okay" cancelText="Dismiss" [compareWith]="compareFn"> <ion-option *ngFor="let o of myData" [value]="o.value">{{o.text}}</ion-option> </ion-select>
+          <ion-label color="primary" stacked>nvcestudiolector name</ion-label> <ion-label color="primary" stacked >{{semana.nvcestudiolectorname}}</ion-label>
+          <ion-label color="primary" stacked>Oracion 2 id</ion-label> <ion-select [(ngModel)]="semana.oracion2id" okText="Okay" cancelText="Dismiss" [compareWith]="compareFn"> <ion-option *ngFor="let o of myData" [value]="o.value">{{o.text}}</ion-option> </ion-select>
+          <ion-label color="primary" stacked>Oracion 2 name</ion-label> <ion-label color="primary" stacked >{{semana.oracion2name}}</ion-label>
+          <ion-label color="primary" stacked>camara id</ion-label> <ion-select [(ngModel)]="semana.camaraid" okText="Okay" cancelText="Dismiss" [compareWith]="compareFn"> <ion-option *ngFor="let o of myData" [value]="o.value">{{o.text}}</ion-option> </ion-select>
+          <ion-label color="primary" stacked>camara name</ion-label> <ion-label color="primary" stacked >{{semana.camaraname}}</ion-label>
+          <ion-label color="primary" stacked>aparatos id</ion-label> <ion-select [(ngModel)]="semana.aparatosid" okText="Okay" cancelText="Dismiss" [compareWith]="compareFn"> <ion-option *ngFor="let o of myData" [value]="o.value">{{o.text}}</ion-option> </ion-select>
+          <ion-label color="primary" stacked>aparatos name</ion-label> <ion-label color="primary" stacked >{{semana.aparatosname}}</ion-label>
+          <ion-label color="primary" stacked>cronometro id</ion-label> <ion-select [(ngModel)]="semana.cronometroid" okText="Okay" cancelText="Dismiss" [compareWith]="compareFn"> <ion-option *ngFor="let o of myData" [value]="o.value">{{o.text}}</ion-option> </ion-select>
+          <ion-label color="primary" stacked>cronometro name</ion-label> <ion-label color="primary" stacked >{{semana.cronometroname}}</ion-label>
+          <ion-label color="primary" stacked>Presidente Domingo id</ion-label> <ion-select [(ngModel)]="semana.dompresidenteid" okText="Okay" cancelText="Dismiss" [compareWith]="compareFn"> <ion-option *ngFor="let o of myData" [value]="o.value">{{o.text}}</ion-option> </ion-select>
+          <ion-label color="primary" stacked>Presidente Domingo name</ion-label> <ion-label color="primary" stacked >{{semana.dompresidentename}}</ion-label>
+          <ion-label color="primary" stacked>Lector Atalaya id</ion-label> <ion-select [(ngModel)]="semana.domlecturaid" okText="Okay" cancelText="Dismiss" [compareWith]="compareFn"> <ion-option *ngFor="let o of myData" [value]="o.value">{{o.text}}</ion-option> </ion-select>
+          <ion-label color="primary" stacked>Lector Atalaya name</ion-label> <ion-label color="primary" stacked >{{semana.domlecturaname}}</ion-label> 
+          
+          
         </ion-list>
       </ion-card-content>
     </div>

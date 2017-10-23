@@ -67,4 +67,9 @@ export class SemanasListComponent implements OnInit, OnDestroy {
     var d = new Date(date);
    return d.toLocaleString();
   }
+
+  compareFn(option1: any, option2: any) {
+    debugger;
+    return option1 === option2;
+  }
 }

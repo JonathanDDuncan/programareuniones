@@ -12,6 +12,7 @@ declare var require: any;
 export class SemanaEditComponent {
   character;
   editedSemana: RxDocument;
+  myData: any;
 
   ngOnInit() { }
 
@@ -26,12 +27,23 @@ export class SemanaEditComponent {
     public platform: Platform, private params: NavParams,
 
     public viewCtrl: ViewController
+
+    
   ) {
-    this.semana = params.get('semana')
+    this.semana = params.get('semana');
+    this.myData=[{value: "1", text: "Option 1"},{value: "2", text: "Option 2"}];
+  
+   
   }
   dismiss() {
     this.viewCtrl.dismiss();
   }
+  compareFn(option1: any, option2: any) {
+ 
+    return option1 === option2;
+  }
+  
+  
   async submit() {
     this.semana.modificado = this.databaseService.getDate();
     await this.semana.save();
