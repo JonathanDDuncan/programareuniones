@@ -28,6 +28,7 @@ import { SemanasListComponent } from '../components/semanas-list/semanas-list.co
 import { ConsejosListComponent } from '../components/consejos-list/consejos-list.component';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+import { FillSemanaService } from '../services/fill-semana.service';
 
 export function HttpLoaderFactory(http: Http) {
 
@@ -87,6 +88,7 @@ export function provideSettings(storage: Storage) {
     SplashScreen,
     StatusBar,
     ProgramaDatabaseService,
+    FillSemanaService,
     { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })

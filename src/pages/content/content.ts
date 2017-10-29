@@ -5,7 +5,7 @@ import JSZip from 'jszip';
 import JSZipUtils from 'jszip-utils';
 import FileSaver from 'file-saver';
 import Docxtemplater from 'docxtemplater';
-
+import { FillSemanaService } from '../../services/fill-semana.service';
 
 @Component({
   selector: 'page-content',
@@ -13,12 +13,17 @@ import Docxtemplater from 'docxtemplater';
 })
 export class ContentPage {
 
-  constructor(public navCtrl: NavController) { }
+  constructor(public navCtrl: NavController,private fillSemanaService: FillSemanaService) { }
   loadFile(url: string, callback) {
 
     JSZipUtils.getBinaryContent(url, callback);
   };
-
+  fillLastWeek() {
+    debugger;
+    let semana : string;
+    this.fillSemanaService.fillSemana().then(result =>  alert(result)); 
+   
+  }
   runloadfile() {
     let result = this.loadFile("../assets/examples/S-140-S-template.docx", function (error, content) {
       if (error) { throw error };
