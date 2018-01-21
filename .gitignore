@@ -34,3 +34,6 @@ $RECYCLE.BIN/
 Thumbs.db
 UserInterfaceState.xcuserstate
 elm-stuff/
+package-lock.json
+.vs/slnx.sqlite
+.vs/VSWorkspaceState.json
