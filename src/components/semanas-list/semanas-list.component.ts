@@ -3,11 +3,11 @@ import { Component, OnInit, OnDestroy, NgZone, Output, EventEmitter } from '@ang
 import { ProgramaDatabaseService } from '../../services/programadatabase.service';
 import { SemanaEditComponent } from '../../pages/semanaedit/semanaedit.component';
 
-
+ 
 import { Platform, ViewController, ActionSheetController } from 'ionic-angular';
 import * as RxDBTypes from '../../schemas/RxProgramaDB.d';
 declare var require: any;
-@Component({
+@Component({ 
   selector: 'semanas-list',
   templateUrl: './semanas-list.component.html',
   styles: ['./semanas-list.component.less'],
