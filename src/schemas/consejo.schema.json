@@ -31,7 +31,7 @@
     "leccion": {
       "type": "number",
       "default": 0
-      },
+    },
     "fechaasignado": {
       "type": "number",
       "default": 0
@@ -45,5 +45,8 @@
       "default": 0
     }
   },
-  "required": ["publicadorid","leccion"]
+  "required": [
+    "publicadorid",
+    "leccion"
+  ]
 }
